@@ -97,6 +97,31 @@ class SuperAdminController extends Controller
         $user->save();
         return redirect('/admin/accounts/coordinators')->with('success','New Account Created: '.$user->username);
     }
+
+    public function add_new_student(Request $request){
+        $student = new Student;
+        $student->school_id = $request->school_id;
+        $student->student_token = strtoupper($request->student_token_no);
+        $student->student_number = $request->student_number;
+        $student->first_name = strtoupper($request->first_name);
+        $student->middle_name = strtoupper($request->middle_name);
+        $student->last_name = strtoupper($request->last_name);
+        $student->program = strtoupper($request->program);
+        $student->year = $request->current_year;
+        $student->section = strtoupper($request->section);
+        $student->academic_year_id = 1;
+        $student->address = strtoupper($request->address);
+        $student->contact = $request->contact;
+        $student->stat = 0;
+        $student->status =  'Unregistered';
+
+        $student->save();
+
+      
+
+        return redirect('/admin/dashboard');
+    }
+
      public function account_update($id,Request $request){
         // return dd($request);
 

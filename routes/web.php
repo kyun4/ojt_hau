@@ -228,6 +228,9 @@ Route::get('/admin/dashboard', 'SuperAdminController@dashboard')->middleware('au
 Route::get('/admin/profile', 'SuperAdminController@profile')->middleware('auth')->middleware('aa');
 Route::get('/admin/profile/update/basic/info', 'SuperAdminController@profile_basic')->middleware('auth')->middleware('aa');
 Route::post('/admin/profile/update/basic/info', 'SuperAdminController@profile_basic_update')->middleware('auth')->middleware('aa');
+
+Route::post('/admin/student/add_new_student', 'SuperAdminController@add_new_student')->middleware('auth')->middleware('aa');
+
 Route::get('/admin/profile/banner', 'SuperAdminController@profile_banner')->middleware('auth')->middleware('aa');
 Route::post('/admin/profile/banner', 'SuperAdminController@profile_banner_update')->middleware('auth')->middleware('aa');
 

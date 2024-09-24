@@ -276,77 +276,84 @@
 
             
             <small>*NOTE: Adding new student must be not already registered or exists in the database. Adding student who is not enrolled or not on the enrollment system database is a violation by database tampering.</small>
+
+            <form method = "POST" action = "/admin/student/add_new_student">
+
+
+                @csrf 
+                <div class = "form-group mt-4">
+                    <label for = "student_token_new">Student Token No.</label>
+                    <input type = "text" id = "student_token_new" name = "student_token_no" placeholder = "Student Token No." class = "form-control" required/>
+                </div> <!-- form-group Student Token -->
+
+                <div class = "form-group">
+                    <label for = "student_number">Student Number</label>
+                    <input type = "text" id = "student_number" name = "student_number" placeholder = "Student Number" class = "form-control" required/>
+                </div> <!-- form-group Student Number -->
+
+                <div class = "form-group">
+                    <label for = "firstname_new">First Name</label>
+                    <input type = "text" id = "firstname_new" name = "first_name" placeholder = "First Name" class = "form-control" required/>
+                </div> <!-- form-group First Name -->
+
+                <div class = "form-group">
+                    <label for = "middlename_new">Middle Name</label>
+                    <input type = "text" id = "middlename_new" name = "middle_name" placeholder = "Middle Name" class = "form-control"/>
+                </div> <!-- form-group Middle Name -->
+
+                <div class = "form-group">
+                    <label for = "lastname_new">Last Name</label>
+                    <input type = "text" id = "lastname_new" name = "last_name" placeholder = "Last Name" class = "form-control" required/>
+                </div> <!-- form-group Last Name -->
             
-            <div class = "form-group">
-                <label for = "student_token_new">Student Token No.</label>
-                <input type = "text" id = "student_token_new" name = "student_token" placeholder = "Student Token No." class = "form-control" required/>
-            </div> <!-- form-group Student Token -->
+                <div class = "form-group">
+                    <label for = "school_new">School</label>
+                    <select name = "school_id" id = "school_new" class = "form-control" required>
+                    <option value = ""> -- Select School -- </option>
+                        @foreach($schools as $school_list)
+                            <option value = "{{$school_list->id}}">{{ $school_list->school }}</option>
+                        @endforeach
+                    </select>
+                </div> <!-- form-group School -->
 
-            <div class = "form-group">
-                <label for = "student_number">Student Number</label>
-                <input type = "text" id = "student_number" name = "student_number" placeholder = "Student Number" class = "form-control" required/>
-            </div> <!-- form-group Student Token -->
+                <div class = "form-group">
+                    <label for = "program_new">Program</label>
+                    <select name = "program" id = "program_new" class = "form-control" required>
+                    <option value = ""> -- Select Program -- </option>
+                        @foreach($schools as $school_list)
+                            <option value = "{{$school_list->id}}">{{ $school_list->school }}</option>
+                        @endforeach
+                    </select>
+                </div> <!-- form-group Program -->
 
-            <div class = "form-group">
-                <label for = "firstname_new">First Name</label>
-                <input type = "text" id = "firstname_new" name = "first_name" placeholder = "First Name" class = "form-control" required/>
-            </div> <!-- form-group First Name -->
+                <div class = "form-group">
+                    <label for = "address_new">Address</label>
+                    <input type = "text" name = "address" id = "address_new" placeholder = "Address" class = "form-control" required/>
+                </div> <!-- form-group Address -->
 
-            <div class = "form-group">
-                <label for = "firstname_new">Middle Name</label>
-                <input type = "text" id = "middlename_new" name = "middle_name" placeholder = "Middle Name" class = "form-control"/>
-            </div> <!-- form-group Middle Name -->
+                <div class = "form-group">
+                    <label for = "contact_no_new">Contact No.</label>
+                    <input type = "text" name = "contact" id = "contact_no_new" placeholder = "Contact No." class = "form-control" required/>
+                </div> <!-- form-group Contact No. -->
 
-            <div class = "form-group">
-                <label for = "firstname_new">Last Name</label>
-                <input type = "text" id = "lastname_new" name = "last_name" placeholder = "Last Name" class = "form-control" required/>
-            </div> <!-- form-group Last Name -->
+                <div class = "form-group">
+                    <label for = "current_year">Current Year</label>
+                    <input type = "text"  name = "current_year" id = "current_year" placeholder = "Current Year" class = "form-control" required/>
+                </div> <!-- form-group Current Year -->
+
+                <div class = "form-group">
+                    <label for = "section">Current Section</label>
+                    <input type = "text" name = "section" id = "section" placeholder = "Current Section" class = "form-control" required/>
+                </div> <!-- form-group Current Section -->
+
+                <div class = "form-group">
+                
+                    <button type = "submit" class = "btn btn-success btn-lg btn-block">Submit</button>
+
+                </div> <!-- form-group Current Section -->
         
-            <div class = "form-group">
-                <label for = "school_new">School</label>
-                <select name = "school" id = "school_new" class = "form-control" required>
-                <option value = ""> -- Select School -- </option>
-                    @foreach($schools as $school_list)
-                        <option value = "{{$school_list->id}}">{{ $school_list->school }}</option>
-                    @endforeach
-                </select>
-            </div> <!-- form-group School -->
+            </form> <!-- Add New Student Form -->
 
-            <div class = "form-group">
-                <label for = "program_new">Program</label>
-                <select name = "program" id = "program_new" class = "form-control" required>
-                <option value = ""> -- Select Program -- </option>
-                    @foreach($schools as $school_list)
-                        <option value = "{{$school_list->id}}">{{ $school_list->school }}</option>
-                    @endforeach
-                </select>
-            </div> <!-- form-group Program -->
-
-            <div class = "form-group">
-                <label for = "address_new">Address</label>
-                <input type = "text" name = "address" id = "address_new" placeholder = "Address" class = "form-control" required/>
-            </div> <!-- form-group Address -->
-
-            <div class = "form-group">
-                <label for = "contact_no_new">Contact No.</label>
-                <input type = "text" name = "contact" id = "contact_no_new" placeholder = "Contact No." class = "form-control" required/>
-            </div> <!-- form-group Contact No. -->
-
-            <div class = "form-group">
-                <label for = "current_year">Current Year</label>
-                <input type = "text" id = "current_year" placeholder = "Current Year" class = "form-control" required/>
-            </div> <!-- form-group Current Year -->
-
-            <div class = "form-group">
-                <label for = "section">Current Section</label>
-                <input type = "text" id = "section" placeholder = "Current Section" class = "form-control" required/>
-            </div> <!-- form-group Current Section -->
-
-            <div class = "form-group">
-               
-                <button type = "submit" class = "btn btn-success btn-lg btn-block">Submit</button>
-            </div> <!-- form-group Current Section -->
-        
             </div> <!-- modal-body -->
         </div> <!-- modal-content -->
     </div> <!-- modal-dialog -->
