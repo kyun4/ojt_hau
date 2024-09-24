@@ -1,0 +1,140 @@
+@extends('layouts.ui')
+@section('title') Student Accomplishments List @endsection
+
+@section('content')
+<div class="row">
+    @if (count($accomplishments) == 0)
+        <center><strong>No Accomplishment Yet</strong></center>
+    @else
+        @foreach ($accomplishments as $accomplishment)
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $accomplishment->student->first_name }} {{ $accomplishment->student->last_name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Section: {{ $accomplishment->student->section }}</h6>
+                        @php
+                            $studentOjt = DB::table('student_ojts')->where('student_id', $accomplishment->student->id)->first();
+                            $user = $studentOjt ? DB::table('users')->where('id', $studentOjt->partner_id)->first() : null;
+                            $profile = $user ? DB::table('profiles')->where('id', $user->profile_id)->first() : null;
+
+                            $companyName = $profile ? $profile->company_name : 'N/A';
+                        @endphp
+                        <p class="card-text">Company: {{ $companyName }}</p>
+                        <p class="card-text">Date Start: {{ $accomplishment->date_start }}</p>
+                        <p class="card-text">Date End: {{ $accomplishment->date_end }}</p>
+                        <p class="card-text">Hours Rendered: {{ $accomplishment->hours_rendered }}</p>
+                        <p class="card-text">Accomplishment: {{ urldecode($accomplishment->accomplishment) }}</p>
+                        <p class="card-text">Status: {{ $accomplishment->status }}</p>
+                        @if ($accomplishment->grade)
+                            <p class="card-text">Grade: {{ $accomplishment->grade }}</p>
+                        @endif
+                        @if ($accomplishment->comment)
+                            <p class="card-text">Comment: {{ $accomplishment->comment }}</p>
+                        @endif
+                        <button type="button" class="btn btn-primary showModalBtn" data-toggle="modal" data-target="#gradeModal" data-id="{{ $accomplishment->id }}">Grade Accomplishment</button>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @endif
+</div>
+
+    <div class="modal fade" id="gradeModal" tabindex="-1" role="dialog" aria-labelledby="gradeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gradeModalLabel">Grade Accomplishment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Name of the student -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>Name:</strong>
+                        <span id="modalStudentName"></span><br>
+                        <strong>Section:</strong>
+                        <span id="modalStudentSection"></span><br>
+                        <strong>Company:</strong>
+                        <span id="modalStudentCompany"></span>
+                        <hr>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Date Start:</strong>
+                        <span id="modalDateStart"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Date End:</strong>
+                        <span id="modalDateEnd"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Hours Rendered:</strong>
+                        <span id="modalHoursRendered"></span>
+                    </div>
+                    <div class="col-md-12">
+                        <strong>Accomplishment:</strong><br>
+                        <span id="modalAccomplishment"></span>
+                        <hr>
+                    </div>
+                    <div class="col-md-12">
+                        <strong>Grade Accomplishment:</strong><br>
+                        <form action="{{ route('accomplishment_grade') }}" method="POST" id="gradeForm">
+                            @csrf
+                            <input type="hidden" name="accomplishment_id" id="modalId">
+                            <div class="form-group">
+                                <label for="grade">Grade</label>
+                                <input type="number" name="grade" id="grade" class="form-control" min="0" max="30" step="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Comment/Feedback</label>
+                                <textarea name="comment" id="comment" class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@endsection
+
+@section('script')
+    <script>
+       $(document).ready(function(){
+            $('.showModalBtn').click(function(){
+                var accomplishmentId = $(this).data('id');
+                var studentName = $(this).closest('.card').find('.card-title').text().trim();
+                var studentSection = $(this).closest('.card').find('.card-subtitle').text().trim().replace('Section: ', '');
+                var studentCompany = $(this).closest('.card').find('.card-text:nth-of-type(3)').text().trim().replace('Company: ', '');
+                var dateStart = $(this).closest('.card').find('.card-text:nth-of-type(4)').text().trim().replace('Date Start: ', '');
+                var dateEnd = $(this).closest('.card').find('.card-text:nth-of-type(5)').text().trim().replace('Date End: ', '');
+                var hoursRendered = $(this).closest('.card').find('.card-text:nth-of-type(6)').text().trim().replace('Hours Rendered: ', '');
+                var accomplishment = $(this).closest('.card').find('.card-text:nth-of-type(7)').text().trim().replace('Accomplishment: ', '');
+                var grade = $(this).closest('.card').find('.card-text:contains("Grade:")').text().trim().replace('Grade: ', '');
+                var comment = $(this).closest('.card').find('.card-text:contains("Comment:")').text().trim().replace('Comment: ', '');
+
+                $('#modalId').val(accomplishmentId);
+                $('#modalStudentName').text(studentName);
+                $('#modalStudentSection').text(studentSection);
+                $('#modalStudentCompany').text(studentCompany);
+                $('#modalDateStart').text(dateStart);
+                $('#modalDateEnd').text(dateEnd);
+                $('#modalHoursRendered').text(hoursRendered);
+                $('#modalAccomplishment').text(accomplishment);
+                $('#grade').val(grade);
+                $('#comment').val(comment);
+
+                // Show the modal
+                $('#gradeModal').modal('show');
+            });
+        });
+    </script>
+@endsection

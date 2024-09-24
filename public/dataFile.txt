@@ -1,0 +1,21 @@
+* **BSIT** (Bachelor of Science in Information Technology) professionals design, develop, implement, and maintain computer networks and information systems. They possess expertise in areas like:
+    * System administration
+    * Cybersecurity
+    * Networking
+    * Web development
+    * Database management
+    * Software development (to a lesser extent compared to BSCS)
+
+* **BSCS** (Bachelor of Science in Computer Science) graduates focus on the theoretical foundations of computing and software development. They have strong skills in:
+    * Algorithm design and analysis
+    * Data structures
+    * Programming languages
+    * Software engineering principles
+    * Operating systems
+    * Artificial intelligence and machine learning (increasingly emphasized)
+
+* Both BSIT and BSCS graduates are in high demand, but their career paths often diverge. BSIT professionals typically work in network administration, IT support, and web development roles. BSCS graduates often find careers in software development, systems engineering, and emerging fields like AI and machine learning.
+
+* The choice between BSIT and BSCS depends on your interests and career goals. If you're passionate about building and maintaining technology infrastructure, BSIT might be a good fit. If you're more interested in the theoretical underpinnings of software and enjoy programming, BSCS could be the better choice.
+
+* Regardless of your
