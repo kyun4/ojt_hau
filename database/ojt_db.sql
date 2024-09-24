@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2024 at 09:19 AM
+-- Generation Time: Sep 24, 2024 at 11:58 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -567,6 +567,19 @@ INSERT INTO `student_ojts` (`id`, `student_id`, `partner_id`, `job_id`, `academi
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student_program`
+--
+
+CREATE TABLE `student_program` (
+  `id` int(11) NOT NULL,
+  `programe_name` varchar(225) NOT NULL,
+  `school_id` int(11) NOT NULL,
+  `date_time_created` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `student_requirements`
 --
 
@@ -779,6 +792,12 @@ ALTER TABLE `student_ojts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student_program`
+--
+ALTER TABLE `student_program`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `student_requirements`
 --
 ALTER TABLE `student_requirements`
@@ -919,6 +938,12 @@ ALTER TABLE `student_monitorings`
 --
 ALTER TABLE `student_ojts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `student_program`
+--
+ALTER TABLE `student_program`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student_requirements`

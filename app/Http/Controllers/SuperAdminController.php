@@ -172,8 +172,9 @@ class SuperAdminController extends Controller
         $users = User::all();
         $students = User::all()->pluck('student_id');
         $students_unreg = Student::whereNotIn('id',$students)->get();
+        $schools = School::all();
         // return $students_unreg;
-        return view('admin.dashboard')->with('users',$users)->with('students_unreg',$students_unreg);
+        return view('admin.dashboard')->with('users',$users)->with('students_unreg',$students_unreg)->with('schools',$schools);
     }
 
     public function profile(){
