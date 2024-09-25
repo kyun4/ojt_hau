@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2024 at 11:58 AM
+-- Generation Time: Sep 25, 2024 at 04:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -390,7 +390,8 @@ INSERT INTO `students` (`id`, `school_id`, `student_token`, `academic_year_id`, 
 (2, 1, 'S20000000M', 1, '20000000', NULL, 'SANTOS', 'MARIA', 'B', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', NULL, NULL, NULL, NULL, NULL, 'Unregistered', '0', '2024-05-24 15:04:32', '2024-05-24 15:04:32'),
 (3, 1, '', 1, '30000000', NULL, 'REYES', 'JUAN', 'C', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'parent', 'parent', 'parent', '24 sapangbato, san fernando, pampanga', '99190901112', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 15:26:32'),
 (4, 1, '', 1, '40000000', NULL, 'BAUTISTA', 'ANA', 'D', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'name', 'Parent', 'guardian', '191 kakawati, san fernando, pampanga', '9919090111', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 12:40:48'),
-(5, 1, '', 1, '50000000', NULL, 'OCAMPO', 'ANDRES', 'E', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-05-24 15:04:32', '2024-09-21 13:05:03');
+(5, 1, '', 1, '50000000', NULL, 'OCAMPO', 'ANDRES', 'E', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-05-24 15:04:32', '2024-09-21 13:05:03'),
+(6, 1, '', 1, '10000002', NULL, 'Salas', 'Ben', 'Rafael', '1', '4', 'WD-32', NULL, NULL, NULL, 'Russia', '991909111', 'Active', '0', '2024-09-24 13:37:02', '2024-09-25 02:25:25');
 
 -- --------------------------------------------------------
 
@@ -562,7 +563,7 @@ CREATE TABLE `student_ojts` (
 --
 
 INSERT INTO `student_ojts` (`id`, `student_id`, `partner_id`, `job_id`, `academic_year_id`, `evaluation`, `reflection`, `certificate`, `status`, `created_at`, `updated_at`) VALUES
-(1, 3, 3, 1, 1, 'COMPLETED', NULL, 'REYES JUAN CERTIFICATE OF COMPLETION.PDF', 'FOR COOR APPROVAL', '2024-09-23 15:42:25', '2024-09-24 05:24:52');
+(1, 3, 3, 1, 1, 'COMPLETED', 'REYES JUAN REFLECTION.PDF', 'REYES JUAN CERTIFICATE OF COMPLETION.PDF', 'FOR COOR APPROVAL', '2024-09-23 15:42:25', '2024-09-24 12:58:36');
 
 -- --------------------------------------------------------
 
@@ -659,7 +660,8 @@ INSERT INTO `users` (`id`, `role_id`, `profile_id`, `student_id`, `email`, `user
 (3, 3, 3, 0, 'JOHNDOE@EMAIL.COM', 'partner_company', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-05-24 15:02:07', '2024-05-24 15:02:28'),
 (4, 1, 0, 4, 'student_hau@email.com', 'student_hau', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-05-24 15:06:12', '2024-05-24 15:06:12'),
 (5, 1, 0, 5, 'andresusername@gmail.co', 'andres_username', '1bbd886460827015e5d605ed44252251', 'Active', '0', '2024-09-21 13:05:03', '2024-09-21 13:05:03'),
-(6, 1, 0, 3, 'juanreyes@gmail.com', 'juanreyes24', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-09-23 15:24:35', '2024-09-23 15:25:29');
+(6, 1, 0, 3, 'juanreyes@gmail.com', 'juanreyes24', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-09-23 15:24:35', '2024-09-23 15:25:29'),
+(7, 1, 0, 6, 'bensalas@gmail.com', 'bensalas@gmail.com', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-09-25 02:25:25', '2024-09-25 02:25:25');
 
 --
 -- Indexes for dumped tables
@@ -901,7 +903,7 @@ ALTER TABLE `specializations`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `student_accomplishments`
@@ -961,7 +963,7 @@ ALTER TABLE `student_skills`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
