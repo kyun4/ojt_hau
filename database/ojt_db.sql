@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2024 at 06:13 PM
+-- Generation Time: Oct 03, 2024 at 08:44 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -432,7 +432,7 @@ CREATE TABLE `student_accomplishments` (
 INSERT INTO `student_accomplishments` (`id`, `student_id`, `date_start`, `date_end`, `accomplishment`, `hours_rendered`, `status`, `comment`, `grade`, `created_at`, `updated_at`) VALUES
 (1, 3, '09-23-2024', '09-23-2024', '%3Cp%3EI+have+accomplished+a+UI%2FUX+design+for+Login+of+Toro+Cloud%3C%2Fp%3E', '00:00:00', 'Graded', 'magaling', 30, '2024-09-23 15:43:18', '2024-09-23 16:48:23'),
 (2, 3, '09-24-2024', '09-24-2024', '%3Cp%3EI+have+created+flutter+and+react+native+function+integrated+with+firebase%3C%2Fp%3E', '00:00:00', 'Graded', 'kung may 32 lang yun na nilagay ko', 30, '2024-09-23 16:41:47', '2024-09-23 16:49:10'),
-(3, 6, '10-04-2024', '10-04-2024', '%3Cp%3EIntroduction+to+job+roles+and+responsibilities%2C+warm-up+on+react+native+UI+and+UX+works%3C%2Fp%3E', '00:00:00', '', NULL, NULL, '2024-10-03 16:11:46', '2024-10-03 16:11:46');
+(3, 6, '10-04-2024', '10-04-2024', '%3Cp%3EIntroduction+to+job+roles+and+responsibilities%2C+warm-up+on+react+native+UI+and+UX+works%3C%2Fp%3E', '00:00:00', 'Graded', 'yan ganyan dapat', 30, '2024-10-03 16:11:46', '2024-10-03 16:25:20');
 
 -- --------------------------------------------------------
 
@@ -558,7 +558,7 @@ CREATE TABLE `student_monitorings` (
 
 INSERT INTO `student_monitorings` (`id`, `student_id`, `job_id`, `partner_id`, `date_log`, `time_in`, `time_out`, `remarks`, `created_at`, `updated_at`) VALUES
 (1, 3, 1, 3, '09-23-2024', '9:00:00 AM', '3:00:00 PM', 'Approved: magaling', '2024-09-23 15:43:42', '2024-09-23 15:44:46'),
-(2, 6, 2, 3, '10-04-2024', '8:30:00 AM', '5:00:00 PM', NULL, '2024-10-03 16:08:48', '2024-10-03 16:08:48');
+(2, 6, 2, 3, '10-04-2024', '8:30:00 AM', '5:00:00 PM', 'Approved: magaling', '2024-10-03 16:08:48', '2024-10-03 16:19:39');
 
 -- --------------------------------------------------------
 
@@ -932,7 +932,7 @@ ALTER TABLE `specializations`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `student_accomplishments`
