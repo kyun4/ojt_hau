@@ -21,10 +21,10 @@ New Log
                 <label for="time_in">Time-In</label>
                 <div class="row">
                     <div class="col-md-4">
-                        <input type="text" name="time_in_hour" class="form-control" id="time_in_hour" placeholder="Hour" required>
+                        <input type="number" min = "0" max = "12" name="time_in_hour" class="form-control" id="time_in_hour" placeholder="Hour" required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" name="time_in_minutes" class="form-control" id="time_in_minutes" placeholder="Minutes">
+                        <input type="number" min = "0" max = "59" name="time_in_minutes" class="form-control" id="time_in_minutes" placeholder="Minutes">
                     </div>
                     <div class="col-md-4">
                         <select name="time_in_designation" class="form-control" id="time_in_designation">
@@ -43,10 +43,10 @@ New Log
                 <label for="time_out">Time-Out</label>
                 <div class="row">
                     <div class="col-md-4">
-                        <input type="text" name="time_out_hour" class="form-control" id="time_out_hour" placeholder="Hour" required>
+                        <input type="number" min = "0" max = "12" name="time_out_hour" class="form-control" id="time_out_hour" placeholder="Hour" required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" name="time_out_minutes" class="form-control" id="time_out_minutes" placeholder="Minutes">
+                        <input type="number" min = "0" max = "12" name="time_out_minutes" class="form-control" id="time_out_minutes" placeholder="Minutes">
                     </div>
                     <div class="col-md-4">
                         <select name="time_out_designation" class="form-control" id="time_out_designation">

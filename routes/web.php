@@ -32,6 +32,7 @@ Auth::routes();
 #COORDINATOR ROUTES
 
 Route::get('/coor/student/list', 'CoordinatorController@list')->middleware('auth')->middleware('ca');
+Route::post('/coor/student/list/upload_csv', 'CoordinatorController@upload_csv')->middleware('auth')->middleware('ca');
 Route::get('/coor/student/accomplishments', 'CoordinatorController@accomplishments')->middleware('auth')->middleware('ca');
 Route::post('/coor/student/accomplishments/grade', 'CoordinatorController@accomplishment_grade')->name('accomplishment_grade');
 Route::get('/coor/student/upload', 'CoordinatorController@uploading_form')->middleware('auth')->middleware('ca');

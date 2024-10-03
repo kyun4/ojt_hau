@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2024 at 04:26 AM
+-- Generation Time: Oct 03, 2024 at 06:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -90,7 +90,8 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`id`, `user_id`, `title`, `position`, `location`, `job_descriptions`, `qualifications`, `salary_s`, `salary_e`, `remarks`, `level`, `experience_length`, `education_per`, `skill_per`, `work_exp_per`, `status`, `stat`, `created_at`, `updated_at`) VALUES
-(1, 3, 'Mobile Application UI/UX Designer', 'OJT/Intern', 'Taguig City', '%3Cp%3E%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EManagement+of+Company+Portfolio+Documents+and+related+Files+in+terms+of+UI%2FUX+Design%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EResponsible+for+developing+Mobile+App+pages+transitions+and+work+closely+with+software+engineering+and+IT+Team%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EMaintain+versions+of+developed+UI%2FUX+designs+made+on+Figma+for+prototype+and+Flutter+and+Android+Studio+files+for+source+codes%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EMaintain+github+and+gitlab+files%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3ERevise+and+debug+source+codes+for+Android+Studio+%28Java+or+Kotlin%29+and+Flutter+files%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3ERedesign+changes+from+existing+mobile+application+UI%2FUX+design%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3ECollaborate+to+brainstorming+on+existing+and+new+projects+regarding+with+UI%2FUX+design+on+mobile+application%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3Cp%3E%3C%2Fp%3E', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-09-21 11:00:58', '2024-09-21 11:01:33');
+(1, 3, 'Mobile Application UI/UX Designer', 'OJT/Intern', 'Taguig City', '%3Cp%3E%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EManagement+of+Company+Portfolio+Documents+and+related+Files+in+terms+of+UI%2FUX+Design%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EResponsible+for+developing+Mobile+App+pages+transitions+and+work+closely+with+software+engineering+and+IT+Team%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EMaintain+versions+of+developed+UI%2FUX+designs+made+on+Figma+for+prototype+and+Flutter+and+Android+Studio+files+for+source+codes%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3EMaintain+github+and+gitlab+files%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3ERevise+and+debug+source+codes+for+Android+Studio+%28Java+or+Kotlin%29+and+Flutter+files%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3ERedesign+changes+from+existing+mobile+application+UI%2FUX+design%3C%2Fspan%3E%3C%2Fli%3E%3Cli%3E%3Cspan+style%3D%22font-size%3A+1rem%3B%22%3ECollaborate+to+brainstorming+on+existing+and+new+projects+regarding+with+UI%2FUX+design+on+mobile+application%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3Cp%3E%3C%2Fp%3E', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-09-21 11:00:58', '2024-09-21 11:01:33'),
+(2, 3, 'Software Developer for React Native', 'Junior Programmer Intern', 'Taguig City', '%3Cp%3EAn+intern+with+passionate+and+driven+personality+for+learning+new+things+and+best+practices+in+software+development+for+mobile+application+using+React+Native%3C%2Fp%3E', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-10-03 14:40:00', '2024-10-03 14:40:00');
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,10 @@ INSERT INTO `job_skills` (`id`, `job_id`, `skill`, `created_at`, `updated_at`) V
 (7, 1, 'Good command communication skills', '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
 (8, 1, 'Can integrate ideas smooth in the team and can work, clarify and collaborate with the requirements of team', '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
 (9, 1, 'Can translate client\'s demand into something more creative and within the scope', '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
-(10, 1, 'Skills with Flutterflow, Adobe XD and Photoshop is not required but is a plus', '2024-09-21 11:00:58', '2024-09-21 11:00:58');
+(10, 1, 'Skills with Flutterflow, Adobe XD and Photoshop is not required but is a plus', '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
+(11, 2, 'Adaptable, Team Player and Can do right with minimal supervision', '2024-10-03 14:40:00', '2024-10-03 14:40:00'),
+(12, 2, 'knowledge in React Native', '2024-10-03 14:40:00', '2024-10-03 14:40:00'),
+(13, 2, 'knowledge in UI and UX', '2024-10-03 14:40:00', '2024-10-03 14:40:00');
 
 -- --------------------------------------------------------
 
@@ -169,7 +173,8 @@ CREATE TABLE `job_specializations` (
 --
 
 INSERT INTO `job_specializations` (`id`, `job_id`, `specialization_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, '2024-09-21 11:00:58', '2024-09-21 11:00:58');
+(1, 1, 2, '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
+(2, 2, 2, '2024-10-03 14:40:00', '2024-10-03 14:40:00');
 
 -- --------------------------------------------------------
 
@@ -316,6 +321,13 @@ CREATE TABLE `signatories` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `signatories`
+--
+
+INSERT INTO `signatories` (`id`, `school_id`, `first_name`, `middle_name`, `last_name`, `position`, `stat`, `created_at`, `updated_at`) VALUES
+(2, 1, 'JAN', 'C', 'LANADI', 'Coordinator', 'Active', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -391,7 +403,7 @@ INSERT INTO `students` (`id`, `school_id`, `student_token`, `academic_year_id`, 
 (3, 1, '', 1, '30000000', NULL, 'REYES', 'JUAN', 'C', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'parent', 'parent', 'parent', '24 sapangbato, san fernando, pampanga', '99190901112', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 15:26:32'),
 (4, 1, '', 1, '40000000', NULL, 'BAUTISTA', 'ANA', 'D', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'name', 'Parent', 'guardian', '191 kakawati, san fernando, pampanga', '9919090111', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 12:40:48'),
 (5, 1, '', 1, '50000000', NULL, 'OCAMPO', 'ANDRES', 'E', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-05-24 15:04:32', '2024-09-21 13:05:03'),
-(6, 1, '', 1, '10000002', NULL, 'Salas', 'Ben', 'Rafael', '1', '4', 'WD-32', NULL, NULL, NULL, 'Russia', '991909111', 'Active', '0', '2024-09-24 13:37:02', '2024-09-25 02:25:25');
+(6, 1, '1999999', 1, '10000002', NULL, 'Salas', 'Ben', 'Rafael', '1', '4', 'WD-32', 'salas', 'Rafael', 'salas', '111 don bosco, paranaque, ncr', '991909111', 'Active', '0', '2024-09-24 13:37:02', '2024-10-03 14:37:24');
 
 -- --------------------------------------------------------
 
@@ -407,7 +419,7 @@ CREATE TABLE `student_accomplishments` (
   `accomplishment` varchar(255) NOT NULL,
   `hours_rendered` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `comment` varchar(225) NOT NULL,
+  `comment` varchar(225) DEFAULT NULL,
   `grade` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -419,7 +431,8 @@ CREATE TABLE `student_accomplishments` (
 
 INSERT INTO `student_accomplishments` (`id`, `student_id`, `date_start`, `date_end`, `accomplishment`, `hours_rendered`, `status`, `comment`, `grade`, `created_at`, `updated_at`) VALUES
 (1, 3, '09-23-2024', '09-23-2024', '%3Cp%3EI+have+accomplished+a+UI%2FUX+design+for+Login+of+Toro+Cloud%3C%2Fp%3E', '00:00:00', 'Graded', 'magaling', 30, '2024-09-23 15:43:18', '2024-09-23 16:48:23'),
-(2, 3, '09-24-2024', '09-24-2024', '%3Cp%3EI+have+created+flutter+and+react+native+function+integrated+with+firebase%3C%2Fp%3E', '00:00:00', 'Graded', 'kung may 32 lang yun na nilagay ko', 30, '2024-09-23 16:41:47', '2024-09-23 16:49:10');
+(2, 3, '09-24-2024', '09-24-2024', '%3Cp%3EI+have+created+flutter+and+react+native+function+integrated+with+firebase%3C%2Fp%3E', '00:00:00', 'Graded', 'kung may 32 lang yun na nilagay ko', 30, '2024-09-23 16:41:47', '2024-09-23 16:49:10'),
+(3, 6, '10-04-2024', '10-04-2024', '%3Cp%3EIntroduction+to+job+roles+and+responsibilities%2C+warm-up+on+react+native+UI+and+UX+works%3C%2Fp%3E', '00:00:00', '', NULL, NULL, '2024-10-03 16:11:46', '2024-10-03 16:11:46');
 
 -- --------------------------------------------------------
 
@@ -442,8 +455,9 @@ CREATE TABLE `student_applications` (
 --
 
 INSERT INTO `student_applications` (`id`, `student_id`, `job_id`, `status`, `stat`, `created_at`, `updated_at`) VALUES
-(1, 4, 1, 'FOR COOR APPROVAL', 0, '2024-09-23 12:41:33', '2024-09-23 12:46:52'),
-(2, 3, 1, 'Approved', 0, '2024-09-23 15:38:08', '2024-09-23 15:42:25');
+(1, 4, 1, 'Recruited', 0, '2024-09-23 12:41:33', '2024-10-03 06:30:08'),
+(2, 3, 1, 'Approved', 0, '2024-09-23 15:38:08', '2024-09-23 15:42:25'),
+(3, 6, 2, 'Approved', 0, '2024-10-03 14:40:46', '2024-10-03 16:03:54');
 
 -- --------------------------------------------------------
 
@@ -462,6 +476,13 @@ CREATE TABLE `student_employments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `student_employments`
+--
+
+INSERT INTO `student_employments` (`id`, `student_id`, `work_exp_company`, `work_exp_address`, `work_exp_position`, `work_exp_s_year`, `work_exp_e_year`, `created_at`, `updated_at`) VALUES
+(1, 6, 'Jollibee', 'Tuktukan, Taguig City', 'Fast Food Director', '2022-01-03', '2024-09-30', '2024-10-03 14:36:09', '2024-10-03 14:36:09');
 
 -- --------------------------------------------------------
 
@@ -536,7 +557,8 @@ CREATE TABLE `student_monitorings` (
 --
 
 INSERT INTO `student_monitorings` (`id`, `student_id`, `job_id`, `partner_id`, `date_log`, `time_in`, `time_out`, `remarks`, `created_at`, `updated_at`) VALUES
-(1, 3, 1, 3, '09-23-2024', '9:00:00 AM', '3:00:00 PM', 'Approved: magaling', '2024-09-23 15:43:42', '2024-09-23 15:44:46');
+(1, 3, 1, 3, '09-23-2024', '9:00:00 AM', '3:00:00 PM', 'Approved: magaling', '2024-09-23 15:43:42', '2024-09-23 15:44:46'),
+(2, 6, 2, 3, '10-04-2024', '8:30:00 AM', '5:00:00 PM', NULL, '2024-10-03 16:08:48', '2024-10-03 16:08:48');
 
 -- --------------------------------------------------------
 
@@ -563,7 +585,8 @@ CREATE TABLE `student_ojts` (
 --
 
 INSERT INTO `student_ojts` (`id`, `student_id`, `partner_id`, `job_id`, `academic_year_id`, `evaluation`, `reflection`, `certificate`, `status`, `created_at`, `updated_at`) VALUES
-(1, 3, 3, 1, 1, 'COMPLETED', 'REYES JUAN REFLECTION.PDF', 'REYES JUAN CERTIFICATE OF COMPLETION.PDF', 'FOR COOR APPROVAL', '2024-09-23 15:42:25', '2024-09-24 12:58:36');
+(1, 3, 3, 1, 1, 'COMPLETED', 'REYES JUAN REFLECTION.PDF', 'REYES JUAN CERTIFICATE OF COMPLETION.PDF', 'FOR COOR APPROVAL', '2024-09-23 15:42:25', '2024-09-24 12:58:36'),
+(2, 6, 3, 2, 1, NULL, NULL, NULL, 'ON-GOING', '2024-10-03 16:03:54', '2024-10-03 16:03:54');
 
 -- --------------------------------------------------------
 
@@ -604,7 +627,9 @@ CREATE TABLE `student_requirements` (
 --
 
 INSERT INTO `student_requirements` (`id`, `student_id`, `job_id`, `initial_req_1`, `initial_req_2`, `initial_req_3`, `initial_req_4`, `other_file_1`, `other_file_2`, `other_file_3`, `created_at`, `updated_at`) VALUES
-(1, 3, 1, 'MOBILE APPLICATION UI/UX DESIGNER MACIE USER GUIDE.PDF', 'MOBILE APPLICATION UI/UX DESIGNER TEST.PDF', 'MOBILE APPLICATION UI/UX DESIGNER KEY PROMPT ENGINEERING STRATEGIES TO BALANCE COST, PERFORMANCE, AND ACCURACY.PDF', 'MOBILE APPLICATION UI/UX DESIGNER ANGULAR.PDF', NULL, NULL, NULL, '2024-09-23 15:40:20', '2024-09-23 15:40:20');
+(1, 3, 1, 'MOBILE APPLICATION UI/UX DESIGNER MACIE USER GUIDE.PDF', 'MOBILE APPLICATION UI/UX DESIGNER TEST.PDF', 'MOBILE APPLICATION UI/UX DESIGNER KEY PROMPT ENGINEERING STRATEGIES TO BALANCE COST, PERFORMANCE, AND ACCURACY.PDF', 'MOBILE APPLICATION UI/UX DESIGNER ANGULAR.PDF', NULL, NULL, NULL, '2024-09-23 15:40:20', '2024-09-23 15:40:20'),
+(2, 4, 1, 'MOBILE APPLICATION UIUX DESIGNER ACCEPTANCE LETTER FOR ADMISSION.PDF', 'MOBILE APPLICATION UI/UX DESIGNER TRAINING AGREEMENT FOR PAID WORK BASED LEARNING.PDF', 'MOBILE APPLICATION UI/UX DESIGNER PARENTALCONSENT.PDF', 'MOBILE APPLICATION UI/UX DESIGNER SAMPLE FORMAT OF AFFIDAVIT OF WAIVER.PDF', NULL, NULL, NULL, '2024-10-03 06:37:26', '2024-10-03 06:37:26'),
+(3, 6, 2, 'SOFTWARE DEVELOPER FOR REACT NATIVE ACCEPTANCE LETTER 10000002.PDF', 'SOFTWARE DEVELOPER FOR REACT NATIVE PRACTICUM TRAINING AGREEMENT 10000002.PDF', 'SOFTWARE DEVELOPER FOR REACT NATIVE PARANTAL CONCENT 10000002.PDF', 'SOFTWARE DEVELOPER FOR REACT NATIVE WAIVER 10000002.PDF', NULL, NULL, NULL, '2024-10-03 14:47:51', '2024-10-03 14:47:51');
 
 -- --------------------------------------------------------
 
@@ -628,7 +653,11 @@ INSERT INTO `student_skills` (`id`, `student_id`, `skill`, `created_at`, `update
 (1, 4, 'Programming', '2024-09-23 12:32:05', '2024-09-23 12:32:05'),
 (2, 4, 'Multimedia Arts', '2024-09-23 12:32:15', '2024-09-23 12:32:15'),
 (3, 3, 'UI/UX design on figma', '2024-09-23 15:25:57', '2024-09-23 15:25:57'),
-(4, 3, 'familiarity and can code with flutter and react native', '2024-09-23 15:25:57', '2024-09-23 15:25:57');
+(4, 3, 'familiarity and can code with flutter and react native', '2024-09-23 15:25:57', '2024-09-23 15:25:57'),
+(5, 6, 'UI and UX Design', '2024-10-03 14:36:49', '2024-10-03 14:36:49'),
+(6, 6, 'Bakery', '2024-10-03 14:36:49', '2024-10-03 14:36:49'),
+(7, 6, 'Cybersecurity', '2024-10-03 14:36:49', '2024-10-03 14:36:49'),
+(8, 6, 'VB dot Net', '2024-10-03 14:36:49', '2024-10-03 14:36:49');
 
 -- --------------------------------------------------------
 
@@ -837,7 +866,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `job_educations`
@@ -855,13 +884,13 @@ ALTER TABLE `job_experiences`
 -- AUTO_INCREMENT for table `job_skills`
 --
 ALTER TABLE `job_skills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `job_specializations`
 --
 ALTER TABLE `job_specializations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -891,7 +920,7 @@ ALTER TABLE `schools`
 -- AUTO_INCREMENT for table `signatories`
 --
 ALTER TABLE `signatories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `specializations`
@@ -909,19 +938,19 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `student_accomplishments`
 --
 ALTER TABLE `student_accomplishments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student_applications`
 --
 ALTER TABLE `student_applications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student_employments`
 --
 ALTER TABLE `student_employments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `student_evaluations`
@@ -933,13 +962,13 @@ ALTER TABLE `student_evaluations`
 -- AUTO_INCREMENT for table `student_monitorings`
 --
 ALTER TABLE `student_monitorings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `student_ojts`
 --
 ALTER TABLE `student_ojts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `student_program`
@@ -951,13 +980,13 @@ ALTER TABLE `student_program`
 -- AUTO_INCREMENT for table `student_requirements`
 --
 ALTER TABLE `student_requirements`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student_skills`
 --
 ALTER TABLE `student_skills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

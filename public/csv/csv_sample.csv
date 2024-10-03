@@ -1,0 +1,8 @@
+#,school_id,student_token,academic_year_id,student_number,last_name,first_name,middle_name,program,year,section,parent_first_name,parent_last_name,parent_middle_name,address,contact
+1,1,10000021,1,240000001,apurado,harold,matthew,BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY,4,WD-402,,,,,
+1,1,10000401,1,240000002,mission,aries,matthew,BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY,4,WD-402,,,,,
+1,1,10000501,1,240000003,neko,moon,cake,BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY,4,WD-402,,,,,
+1,1,100002201,1,240000004,aguinaldo,paeng,rafael,BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY,4,WD-402,,,,,
+1,1,100005501,1,240000005,dennis,nicanor,trillo,BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY,4,WD-402,,,,,
+1,1,100002201,1,240000006,session,johnny,matthew,BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY,4,WD-402,,,,,
+1,1,100011001,1,240000007,dy,jordan,matthew,BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY,4,WD-402,,,,,

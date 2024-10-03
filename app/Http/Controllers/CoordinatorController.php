@@ -91,6 +91,103 @@ class CoordinatorController extends Controller
         $students = Student::orderBy('last_name','asc')->get();
         return view('coor.list')->with('students',$students);
     }
+
+    public function upload_csv(Request $request){
+      
+
+        $filename = $request->csv_filename;
+
+        if($filename):
+            $file_name = $request->csv_filename->getClientOriginalName();
+            $request->csv_filename->move(public_path('csv'), $file_name);
+
+            $filename_with_directory = public_path('csv').'/'.$file_name;
+
+            $csvfile = fopen($filename_with_directory,'r');
+            fgetcsv($csvfile);
+    
+            $data_from_csv = array();
+
+            $student_update = Student::where('stat',7)->update(array('stat'=>0));
+    
+            while(($row = fgetcsv($csvfile, 1000,",")) !== FALSE){
+    
+                $data_from_csv['school_id'] = $row[1];
+                $data_from_csv['student_token'] = $row[2];
+                $data_from_csv['academic_year_id'] = $row[3];
+                $data_from_csv['student_number'] = $row[4];
+                $data_from_csv['last_name'] = $row[5];
+                $data_from_csv['first_name'] = $row[6];
+                $data_from_csv['middle_name'] = $row[7];
+                $data_from_csv['program'] = $row[8];
+                $data_from_csv['year'] = $row[9];
+                $data_from_csv['section'] = $row[10];
+                $data_from_csv['parent_first_name'] = $row[11];
+                $data_from_csv['parent_last_name'] = $row[12];
+                $data_from_csv['parent_middle name'] = $row[13];
+                $data_from_csv['address'] = $row[14];
+                $data_from_csv['contact'] = $row[15];              
+
+              
+
+                $student_details = new Student;
+                $student_details->school_id = $data_from_csv['school_id'];
+                $student_details->student_token = $data_from_csv['student_token'];
+                $student_details->academic_year_id = $data_from_csv['academic_year_id']; 
+                $student_details->student_number = $data_from_csv['student_number'];
+                $student_details->last_name = $data_from_csv['last_name']; 
+                $student_details->first_name = $data_from_csv['first_name']; 
+                $student_details->middle_name = $data_from_csv['middle_name']; 
+                $student_details->program = $data_from_csv['program']; 
+                $student_details->year = $data_from_csv['year']; 
+                $student_details->section = $data_from_csv['section']; 
+                $student_details->parent_first_name = $data_from_csv['parent_first_name'];
+                $student_details->parent_last_name = $data_from_csv['parent_last_name'];
+                $student_details->parent_middle_name = $data_from_csv['parent_middle name'];
+                $student_details->address = $data_from_csv['address'];
+                $student_details->contact = $data_from_csv['contact'];
+                $student_details->status = 'Unregistered';
+                $student_details->stat = 7;
+             
+                $student_details->save();
+
+           
+            }
+    
+            fclose($csvfile);
+
+            
+    
+
+        endif;
+
+        $students = Student::orderBy('last_name','asc')->get();
+        return view('coor.list')->with('students',$students);
+    }
+
+    public function import_csv(Request $request){
+        $students = Student::orderBy('last_name','asc')->get();
+
+        $filename = $request->csv_filename;
+
+        $csvfile = fopen($filename,'r');
+        fgetcsv($csvfile);
+
+        $data_from_csv = array();
+
+        while(($row = fgetcsv($csvfile, 1000,",")) !== FALSE){
+
+            $data_from_csv['student_number'] = $row[0];
+            $data_from_csv['last_name'] = $row[1];
+            $data_from_csv['first_name'] = $row[2];
+            $data_from_csv['middle_name'] = $row[3];
+            
+        }
+
+        fclose($csvfile);
+
+        return view('coor.list')->with('students',$students);
+    }
     public function for_req(){
         $students = StudentApplication::where('status', '!=', 'Approved')->get();
         // return $students;
@@ -313,6 +410,8 @@ class CoordinatorController extends Controller
             $request->banner->move(public_path('coor_img'), $imageName);
 
             $profile = Profile::find(Auth::user()->profile->id);
+
+
             $profile->banner = $imageName;
             $profile->save();
 

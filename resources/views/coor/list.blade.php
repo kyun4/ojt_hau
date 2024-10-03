@@ -1,8 +1,39 @@
 @extends('layouts.ui')
 
-@section('title') Student List @endsection
+@section('title') Student List <button type = "button" data-toggle = "modal" data-target = "#import_csv" class = "btn btn-secondary float-right">Import from CSV</button>@endsection
 @section('content')
+
+    <div class = "modal" id = "import_csv">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Import CSV File
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form method = "post" action = "/coor/student/list/upload_csv" enctype="multipart/form-data">
+                    @csrf
+                        <input type = "file" id = "upload_csv_file" name = "csv_filename" style = "display:none;" accept = "application/csv">
+
+                        <p>
+                            <b>File Name: </b> <span id = "file_selected_filename"> (No File Selected) </span>
+                        </p>
+                        <p>
+                            <b>File Size: </b> <span id = "file_selected_filesize"> -- </span>
+                        </p>
+
+                        <button type = "button" id = "choose_csv_file" class = "btn btn-secondary btn-block">Choose CSV File</button>
+                        <button type = "submit" id = "upload_csv" class = "d-none btn btn-success btn-block">Upload CSV File</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="table-responsive">
+
+       
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
@@ -19,7 +50,13 @@
             </thead>
             <tbody>
                 @foreach ($students as $student)
-                    <tr>
+
+                        @if ($student->stat == "7")
+                            <tr class = "bg bg-success text-white">
+                        @else
+                            <tr>
+                        @endif
+
                         <td>{{isset($student->user->username) ? $student->user->username:"Unregistered"}}</td>
                         <td>{{$student->student_number}}</td>
                         <td>{{$student->last_name}}</td>
@@ -99,5 +136,36 @@
             $("#modal_body").html("<center>"+id+"</center>");
 
         })
+    </script>
+
+    <script>
+        $('#choose_csv_file').on('click',function(){
+
+          $('#upload_csv_file').click();
+          
+
+        });
+
+        $('#upload_csv_file').on('change',function(){
+
+            if($(this)[0].files.length > 0){
+
+
+                $.each($(this)[0].files,function(index, file){
+
+                    var fileName = file.name;
+                    var fileSize = (file.size / 1024).toFixed(2);
+
+                    $('#file_selected_filename').html(fileName);
+                    $('#file_selected_filesize').html(fileSize+' KB');
+
+                });
+
+                $('#upload_csv').removeClass('d-none')
+            }else{
+                $('#upload_csv').addClass('d-none')
+            }
+
+        });
     </script>
 @endsection
