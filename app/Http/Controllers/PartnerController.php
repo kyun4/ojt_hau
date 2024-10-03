@@ -28,8 +28,9 @@ class PartnerController extends Controller
         $jobs = Job::where('user_id',Auth::user()->id)->where('status','Active')->get();
         return view('partner.joblist')
             ->with('jobs',$jobs);
-        ;
+        
     }
+   
     public function archive_list(){
         $jobs = Job::where('user_id',Auth::user()->id)->where('status','Archived')->get();
         return view('partner.archive_list')
@@ -84,10 +85,10 @@ class PartnerController extends Controller
     public function applicants($id){
         $applicants  = StudentApplication::where('job_id',base64_decode($id))->get();
         $job  = Job::find(base64_decode($id));
-        return view('partner.applicants')
+        return view('partner.applicants_plain')
              ->with('applicants',$applicants )
              ->with('job',$job );
-        ;
+        
     }
     public function applicant_profile($id,$job_id){
         $applicant  = Student::find(base64_decode($id));

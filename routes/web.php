@@ -165,7 +165,6 @@ Route::get('/partners/dashboard', 'PartnerController@dashboard')->middleware('au
 Route::get('/partners/dashboard/table/{content}', 'PartnerController@dashboard_table')->middleware('auth')->middleware('pa');
 Route::get('/partners/job/new', 'PartnerController@new_job')->middleware('auth')->middleware('pa');
 Route::post('/partners/job/new', 'PartnerController@new_job_save')->middleware('auth')->middleware('pa');
-Route::get('/partners/job/list', 'PartnerController@jobs')->middleware('auth')->middleware('pa');
 Route::get('/partners/job/applicants/{id}', 'PartnerController@applicants')->middleware('auth')->middleware('pa');
 Route::get('/partners/job/details/{id}', 'PartnerController@job_details')->middleware('auth')->middleware('pa');
 Route::get('/partners/student/profile/{id}/{job_id}', 'PartnerController@applicant_profile')->middleware('auth')->middleware('pa');
@@ -174,6 +173,7 @@ Route::get('/partners/job/restore/{id}', 'PartnerController@restore')->middlewar
 Route::get('/partners/job/archive/{id}', 'PartnerController@archive')->middleware('auth')->middleware('pa');
 Route::get('/partners/student/restore/{id}', 'PartnerController@restoreStudent')->middleware('auth')->middleware('pa');
 Route::get('/partners/student/archive/{id}', 'PartnerController@archiveStudent')->middleware('auth')->middleware('pa');
+Route::get('/partners/job/list', 'PartnerController@jobs')->middleware('auth')->middleware('pa');
 Route::get('/partners/job/list/archive/', 'PartnerController@archive_list')->middleware('auth')->middleware('pa');
 Route::get('/partners/profile/', 'PartnerController@profile')->middleware('auth')->middleware('pa');
 Route::get('/partners/trainee/students/', 'PartnerController@students')->middleware('auth');

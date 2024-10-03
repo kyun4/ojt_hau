@@ -220,7 +220,7 @@
                                 <span class = "mt-5">Unregistered Student</span>
                             </div>
                             <div class="col-md-2">
-                                <button type = "button" data-toggle = "modal" data-target = "#new_student_modal" class = "btn btn-secondary btn-right float-right">Add New Student</button>
+                                <button type = "button" data-toggle = "modal" data-target = "#new_student_modal" class = "d-none btn btn-secondary btn-right float-right">Add New Student</button>
                             </div>
                         </div>
                     </div>

@@ -74,11 +74,11 @@
                     @endphp
                 @endif
 
-                <small><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{Auth::user()->student->first_name}} {{$middle_name_student}}. {{Auth::user()->student->last_name}}, (__/__/__)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></small>
+                <small><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{Auth::user()->student->first_name}} {{$middle_name_student}}. {{Auth::user()->student->last_name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></small>
             </td>
             <td  align="center">
                 <br />
-                <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (__/__/__)&nbsp;&nbsp;</u>
+                <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
             </td>
         </tr>
         <tr>
@@ -113,7 +113,52 @@
                 <br />
                 <br />
                 <br />
-                <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$student->school->signatory->first_name}} {{$student->school->signatory->middle_name}} {{$student->school->signatory->last_name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+               
+               
+                    @php
+                        $signatory_firstname = "";
+                        $signatory_middlename = "";
+                        $signatory_lastname = "";
+                        $signatory_position = "";
+                    @endphp
+
+                    @if(isset($student->school->signatory->first_name))
+
+                       @php
+                            $signatory_position = $student->school->signatory->position;
+                            $signatory_firstname = $student->school->signatory->first_name;
+                       @endphp
+                        
+                    @endif
+
+                    @if(isset($student->school->signatory->middle_name))
+
+                        @php
+                            $signatory_middlename = $student->school->signatory->middle_name;
+                        @endphp
+                    
+                    @endif
+
+                    @if(isset($student->school->signatory->last_name))
+
+                        @php
+                            $signatory_lastname = $student->school->signatory->last_name;
+                        @endphp
+                        
+                    @endif
+               
+                @if($signatory_firstname != "")
+
+                    @if($signatory_position == "Coordinator")
+                     <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$signatory_firstname}} {{$signatory_middlename}} {{$signatory_lastname}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                    @endif
+
+                @else
+
+                    <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+              
+                @endif
+               
             </td>
         </tr>
         <tr>

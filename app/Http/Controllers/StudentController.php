@@ -15,6 +15,8 @@ use App\JobSpecialization;
 use App\StudentSpecialization;
 use App\Specialization;
 use App\Post;
+use App\School;
+use App\Signatory;
 use App\StudentSkill;
 use App\StudentEmployment;
 use App\StudentEvaluation;
@@ -121,7 +123,9 @@ class StudentController extends Controller
     public function downloadable_form_pta_preview($id,$job_id){
         $student = Student::find(base64_decode($id));
         $job = Job::find(base64_decode($job_id));
-        $data = ['student' => $student,'job'=> $job];
+        $school = School::all();
+        $signatory = Signatory::all();
+        $data = ['student' => $student,'job'=> $job, 'school' => $school,'signatory'=>$signatory];
         $pdf = PDF::loadView('students.forms.practicum_training_agreement', $data);
         return  $pdf->stream();
     }
