@@ -28,8 +28,10 @@
                             <td>{{$student->student->first_name}} {{$student->student->middle_name}} {{$student->student->last_name}}</td>
                             <td>{{$student->job->user->profile->company_name}}</td>
                             <td>
+                                
                                 @if (isset($student->requirement->initial_req_1))
                                     <a href='{{asset('student_forms/'.$student->requirement->initial_req_1)}}' target="_blank">{{$student->requirement->initial_req_1}}</a>
+                                    
                                 @else
                                     <small class="text-warning"><em>Not Yet Uploaded</em></small> @endif
                             </td>
