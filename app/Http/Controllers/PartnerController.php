@@ -468,12 +468,11 @@ class PartnerController extends Controller
             $evaluation->rating_15 = $request->rating_15;
             $evaluation->rating_16 = $request->rating_16;
             $evaluation->rating_17 = $request->rating_17;
-            $evaluation->rating_18 = $request->rating_18;
-            $evaluation->rating_19 = $request->rating_19;
+         
             $evaluation->rating_20 = $request->rating_20;
             $evaluation->rating_21 = $request->rating_21;
             $evaluation->rating_22 = $request->rating_22;
-            $evaluation->rating_23 = $request->rating_23;
+          
             $evaluation->remarks = $request->remarks;
             $evaluation->date_eval = date('m-d-Y');
             $evaluation->status = 'Submitted';
@@ -509,12 +508,11 @@ class PartnerController extends Controller
             $evaluation->rating_15 = $request->rating_15;
             $evaluation->rating_16 = $request->rating_16;
             $evaluation->rating_17 = $request->rating_17;
-            $evaluation->rating_18 = $request->rating_18;
-            $evaluation->rating_19 = $request->rating_19;
+          
             $evaluation->rating_20 = $request->rating_20;
             $evaluation->rating_21 = $request->rating_21;
             $evaluation->rating_22 = $request->rating_22;
-            $evaluation->rating_23 = $request->rating_23;
+         
             $evaluation->remarks = $request->remarks;
             $evaluation->date_eval = date('m-d-Y');
             $evaluation->status = 'Submitted';

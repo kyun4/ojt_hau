@@ -167,7 +167,7 @@ Evaluation Form: {{$student->first_name}} {{$student->middle_name}} {{$student->
                         <td class="selections"><input type="radio" name="rating_14" value="1" /></td>
                     </tr>
                     <tr>
-                        <td colspan=""><strong>D.	Cooperation</strong></td>
+                        <td colspan=""><strong>D.	Interpersonal Cooperation</strong></td>
                         <td class="selections"><input type="radio" name="rating_15" value="5"  /></td>
                         <td class="selections"><input type="radio" name="rating_15" value="4" /></td>
                         <td class="selections"><input type="radio" name="rating_15" value="3" /></td>
@@ -175,7 +175,7 @@ Evaluation Form: {{$student->first_name}} {{$student->middle_name}} {{$student->
                         <td class="selections"><input type="radio" name="rating_15" value="1" /></td>
                     </tr>
                     <tr>
-                        <td colspan=""><strong>E.	Openness to Suggestions & New Ideas</strong></td>
+                        <td colspan=""><strong>E.	Interpersonal Openness to Suggestions & New Ideas</strong></td>
                         <td class="selections"><input type="radio" name="rating_16" value="5"  /></td>
                         <td class="selections"><input type="radio" name="rating_16" value="4" /></td>
                         <td class="selections"><input type="radio" name="rating_16" value="3" /></td>
@@ -190,25 +190,8 @@ Evaluation Form: {{$student->first_name}} {{$student->middle_name}} {{$student->
                         <td class="selections"><input type="radio" name="rating_17" value="2" /></td>
                         <td class="selections"><input type="radio" name="rating_17" value="1" /></td>
                     </tr>
-                    <tr>
-                        <td colspan="6"><strong>G.	Health & Grooming</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="text-indent: 15px">Vitality & Energy</td>
-                        <td class="selections"><input type="radio" name="rating_18" value="5"  /></td>
-                        <td class="selections"><input type="radio" name="rating_18" value="4" /></td>
-                        <td class="selections"><input type="radio" name="rating_18" value="3" /></td>
-                        <td class="selections"><input type="radio" name="rating_18" value="2" /></td>
-                        <td class="selections"><input type="radio" name="rating_18" value="1" /></td>
-                    </tr>
-                    <tr>
-                        <td style="text-indent: 15px">Grooming</td>
-                        <td class="selections"><input type="radio" name="rating_19" value="5"  /></td>
-                        <td class="selections"><input type="radio" name="rating_19" value="4" /></td>
-                        <td class="selections"><input type="radio" name="rating_19" value="3" /></td>
-                        <td class="selections"><input type="radio" name="rating_19" value="2" /></td>
-                        <td class="selections"><input type="radio" name="rating_19" value="1" /></td>
-                    </tr>
+                   
+                   
                     <tr>
                         <td colspan="6"><strong>III.	COMMITMENT TO & COMPLIANCE TO COMPANY RULES</strong></td>
                     </tr>
@@ -236,14 +219,7 @@ Evaluation Form: {{$student->first_name}} {{$student->middle_name}} {{$student->
                         <td class="selections"><input type="radio" name="rating_22" value="2" /></td>
                         <td class="selections"><input type="radio" name="rating_22" value="1" /></td>
                     </tr>
-                    <tr>
-                        <td style="text-indent: 15px">Housekeeping</td>
-                        <td class="selections"><input type="radio" name="rating_23" value="5"  /></td>
-                        <td class="selections"><input type="radio" name="rating_23" value="4" /></td>
-                        <td class="selections"><input type="radio" name="rating_23" value="3" /></td>
-                        <td class="selections"><input type="radio" name="rating_23" value="2" /></td>
-                        <td class="selections"><input type="radio" name="rating_23" value="1" /></td>
-                    </tr>
+                   
                 </table>
             </div>
             <div class="col-md-12">

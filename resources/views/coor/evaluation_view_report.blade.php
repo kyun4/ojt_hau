@@ -7,7 +7,7 @@
     </style>
 @endsection
 @section('title')
-<a href = "/coor/student/for/completion/" class = "mx-2 pr-3"><i class = "fa fa-arrow-left text-white"></i></a> Evaluation Result: {{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}
+<a href = "/coor/student/for/completion/" class = "mx-2 pr-3 no-print"><i class = "fa fa-arrow-left text-white"></i></a> Evaluation Result: {{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}
 @endsection
 @section('content')
    <div class="row">
@@ -186,25 +186,7 @@
                         <td align="center"> @if ($evaluation->rating_17 == '2') <i class="fas fa-fw fa-check"></i> @else @endif </td>
                         <td align="center"> @if ($evaluation->rating_17 == '1') <i class="fas fa-fw fa-check"></i> @else @endif </td>
                     </tr>
-                    <tr>
-                        <td colspan="6"><strong>G.	Health & Grooming</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="text-indent: 15px">Vitality & Energy</td>
-                        <td align="center"> @if ($evaluation->rating_18 == '5')  <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_18 == '4') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_18 == '3') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_18 == '2') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_18 == '1') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                    </tr>
-                    <tr>
-                        <td style="text-indent: 15px">Grooming</td>
-                        <td align="center"> @if ($evaluation->rating_19 == '5')  <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_19 == '4') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_19 == '3') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_19 == '2') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_19 == '1') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                    </tr>
+                                   
                     <tr>
                         <td colspan="6"><strong>III.	COMMITMENT TO & COMPLIANCE TO COMPANY RULES</strong></td>
                     </tr>
@@ -232,14 +214,7 @@
                         <td align="center"> @if ($evaluation->rating_22 == '2') <i class="fas fa-fw fa-check"></i> @else @endif </td>
                         <td align="center"> @if ($evaluation->rating_22 == '1') <i class="fas fa-fw fa-check"></i> @else @endif </td>
                     </tr>
-                    <tr>
-                        <td style="text-indent: 15px">Housekeeping</td>
-                        <td align="center"> @if ($evaluation->rating_23 == '5')  <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_23 == '4') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_23 == '3') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_23 == '2') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                        <td align="center"> @if ($evaluation->rating_23 == '1') <i class="fas fa-fw fa-check"></i> @else @endif </td>
-                    </tr>
+                  
                 </table>
             </div>
             <div class="col-md-12">
@@ -266,19 +241,16 @@
                                         $evaluation->rating_14 +
                                         $evaluation->rating_15 +
                                         $evaluation->rating_16 +
-                                        $evaluation->rating_17 +
-                                        $evaluation->rating_18 +
-                                        $evaluation->rating_19 +
+                                        $evaluation->rating_17 +                                       
                                         $evaluation->rating_20 +
                                         $evaluation->rating_21 +
-                                        $evaluation->rating_22 +
-                                        $evaluation->rating_23 ) / 23;
+                                        $evaluation->rating_22);
                     @endphp
-                    <span class = "font-weight-bold">{{number_format($total_eval,2,".",",")}}</span>
+                    {{number_format($total_eval,2,".",",")}}
                 </p>
             </div>
 
-        
+           
            
 
     </div>

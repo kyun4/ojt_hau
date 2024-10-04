@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2024 at 07:35 AM
+-- Generation Time: Oct 04, 2024 at 04:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -404,15 +404,8 @@ INSERT INTO `students` (`id`, `school_id`, `student_token`, `academic_year_id`, 
 (4, 1, '', 1, '40000000', NULL, 'BAUTISTA', 'ANA', 'D', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'name', 'Parent', 'guardian', '191 kakawati, san fernando, pampanga', '9919090111', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 12:40:48'),
 (5, 1, '', 1, '50000000', NULL, 'OCAMPO', 'ANDRES', 'E', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-05-24 15:04:32', '2024-09-21 13:05:03'),
 (6, 1, '1999999', 1, '10000002', NULL, 'Salas', 'Ben', 'Rafael', '1', '4', 'WD-32', 'salas', 'Rafael', 'salas', '111 don bosco, paranaque, ncr', '991909111', 'Active', '0', '2024-09-24 13:37:02', '2024-10-03 14:37:24'),
-(47, 1, '10000051', 1, '2400222801', NULL, 'diwata', 'cardo', 'matias', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '0', '2024-10-04 05:22:04', '2024-10-04 05:22:16'),
-(48, 1, '100004111', 1, '24002200002', NULL, 'flavor', 'red', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '0', '2024-10-04 05:22:04', '2024-10-04 05:22:16'),
-(49, 1, '10000021', 1, '240000001', NULL, 'apurado', 'harold', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
-(50, 1, '10000401', 1, '240000002', NULL, 'mission', 'aries', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
-(51, 1, '10000501', 1, '240000003', NULL, 'neko', 'moon', 'cake', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
-(52, 1, '100002201', 1, '240000004', NULL, 'aguinaldo', 'paeng', 'rafael', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
-(53, 1, '100005501', 1, '240000005', NULL, 'dennis', 'nicanor', 'trillo', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
-(54, 1, '100002201', 1, '240000006', NULL, 'session', 'johnny', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
-(55, 1, '100011001', 1, '240000007', NULL, 'dy', 'jordan', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25');
+(56, 1, '728932178', 1, '2400902801', NULL, 'lastnamesample', 'firstname', 'middle', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:38:45', '2024-10-04 05:38:45'),
+(57, 1, '100004111', 1, '2422050002', NULL, 'secondlastnamesample', 'firstnamesample', 'namesample', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:38:45', '2024-10-04 05:38:45');
 
 -- --------------------------------------------------------
 
@@ -464,7 +457,7 @@ CREATE TABLE `student_applications` (
 --
 
 INSERT INTO `student_applications` (`id`, `student_id`, `job_id`, `status`, `stat`, `created_at`, `updated_at`) VALUES
-(1, 4, 1, 'Recruited', 0, '2024-09-23 12:41:33', '2024-10-03 06:30:08'),
+(1, 4, 1, 'Approved', 0, '2024-09-23 12:41:33', '2024-10-04 09:02:53'),
 (2, 3, 1, 'Approved', 0, '2024-09-23 15:38:08', '2024-09-23 15:42:25'),
 (3, 6, 2, 'Approved', 0, '2024-10-03 14:40:46', '2024-10-03 16:03:54');
 
@@ -521,12 +514,12 @@ CREATE TABLE `student_evaluations` (
   `rating_15` int(11) NOT NULL,
   `rating_16` int(11) NOT NULL,
   `rating_17` int(11) NOT NULL,
-  `rating_18` int(11) NOT NULL,
-  `rating_19` int(11) NOT NULL,
+  `rating_18` int(11) DEFAULT 0,
+  `rating_19` int(11) NOT NULL DEFAULT 0,
   `rating_20` int(11) NOT NULL,
   `rating_21` int(11) NOT NULL,
   `rating_22` int(11) NOT NULL,
-  `rating_23` int(11) NOT NULL,
+  `rating_23` int(11) NOT NULL DEFAULT 0,
   `remarks` varchar(255) NOT NULL,
   `date_eval` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
@@ -595,7 +588,8 @@ CREATE TABLE `student_ojts` (
 
 INSERT INTO `student_ojts` (`id`, `student_id`, `partner_id`, `job_id`, `academic_year_id`, `evaluation`, `reflection`, `certificate`, `status`, `created_at`, `updated_at`) VALUES
 (1, 3, 3, 1, 1, 'COMPLETED', 'REYES JUAN REFLECTION.PDF', 'REYES JUAN CERTIFICATE OF COMPLETION.PDF', 'FOR COOR APPROVAL', '2024-09-23 15:42:25', '2024-09-24 12:58:36'),
-(2, 6, 3, 2, 1, NULL, NULL, NULL, 'ON-GOING', '2024-10-03 16:03:54', '2024-10-03 16:03:54');
+(2, 6, 3, 2, 1, NULL, NULL, NULL, 'ON-GOING', '2024-10-03 16:03:54', '2024-10-03 16:03:54'),
+(3, 4, 3, 1, 1, NULL, NULL, NULL, 'ON-GOING', '2024-10-04 09:02:53', '2024-10-04 09:02:53');
 
 -- --------------------------------------------------------
 
@@ -941,7 +935,7 @@ ALTER TABLE `specializations`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `student_accomplishments`
@@ -977,7 +971,7 @@ ALTER TABLE `student_monitorings`
 -- AUTO_INCREMENT for table `student_ojts`
 --
 ALTER TABLE `student_ojts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student_program`
