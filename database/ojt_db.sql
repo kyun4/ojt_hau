@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2024 at 08:44 PM
+-- Generation Time: Oct 04, 2024 at 07:35 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -403,7 +403,16 @@ INSERT INTO `students` (`id`, `school_id`, `student_token`, `academic_year_id`, 
 (3, 1, '', 1, '30000000', NULL, 'REYES', 'JUAN', 'C', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'parent', 'parent', 'parent', '24 sapangbato, san fernando, pampanga', '99190901112', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 15:26:32'),
 (4, 1, '', 1, '40000000', NULL, 'BAUTISTA', 'ANA', 'D', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'name', 'Parent', 'guardian', '191 kakawati, san fernando, pampanga', '9919090111', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 12:40:48'),
 (5, 1, '', 1, '50000000', NULL, 'OCAMPO', 'ANDRES', 'E', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-05-24 15:04:32', '2024-09-21 13:05:03'),
-(6, 1, '1999999', 1, '10000002', NULL, 'Salas', 'Ben', 'Rafael', '1', '4', 'WD-32', 'salas', 'Rafael', 'salas', '111 don bosco, paranaque, ncr', '991909111', 'Active', '0', '2024-09-24 13:37:02', '2024-10-03 14:37:24');
+(6, 1, '1999999', 1, '10000002', NULL, 'Salas', 'Ben', 'Rafael', '1', '4', 'WD-32', 'salas', 'Rafael', 'salas', '111 don bosco, paranaque, ncr', '991909111', 'Active', '0', '2024-09-24 13:37:02', '2024-10-03 14:37:24'),
+(47, 1, '10000051', 1, '2400222801', NULL, 'diwata', 'cardo', 'matias', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '0', '2024-10-04 05:22:04', '2024-10-04 05:22:16'),
+(48, 1, '100004111', 1, '24002200002', NULL, 'flavor', 'red', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '0', '2024-10-04 05:22:04', '2024-10-04 05:22:16'),
+(49, 1, '10000021', 1, '240000001', NULL, 'apurado', 'harold', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
+(50, 1, '10000401', 1, '240000002', NULL, 'mission', 'aries', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
+(51, 1, '10000501', 1, '240000003', NULL, 'neko', 'moon', 'cake', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
+(52, 1, '100002201', 1, '240000004', NULL, 'aguinaldo', 'paeng', 'rafael', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
+(53, 1, '100005501', 1, '240000005', NULL, 'dennis', 'nicanor', 'trillo', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
+(54, 1, '100002201', 1, '240000006', NULL, 'session', 'johnny', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25'),
+(55, 1, '100011001', 1, '240000007', NULL, 'dy', 'jordan', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:22:25', '2024-10-04 05:22:25');
 
 -- --------------------------------------------------------
 
@@ -932,7 +941,7 @@ ALTER TABLE `specializations`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `student_accomplishments`

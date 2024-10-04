@@ -33,7 +33,36 @@
 
     <div class="table-responsive">
 
-       
+     
+        @if(isset($students_already_exist))
+
+            @if(sizeof($students_already_exist) > 0)
+
+                <h5>Student(s) from imported CSV cannot be added, Already exist in the database</h5>
+                @foreach($students_already_exist as $sk => $sv)
+                <h5 class = "alert alert-dismissable alert-danger"> 
+                    
+                    <small>
+                    Student Number:
+                    @php               
+                        echo $sv['student_number']; 
+                    @endphp
+                    </small><br/>
+
+                    @php                  
+                        echo strtoupper($sv['first_name']." ");
+                        echo strtoupper($sv['last_name']); 
+                    @endphp
+                    
+                    <button type = "button" class = "btn btn-sm btn-danger float-right mb-5" data-dismiss = "alert">[x] Close Alert</button>
+
+                </h5>
+                @endforeach
+
+            @endif
+
+        @endif
+
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>

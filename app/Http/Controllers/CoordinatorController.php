@@ -92,11 +92,49 @@ class CoordinatorController extends Controller
         return view('coor.list')->with('students',$students);
     }
 
+    public function getStudentDetails(){
+        return Student::all();
+    }
+
+    public function isStudentExist($student_array,$new_student_array){
+
+        $is_exist_bool = false;
+        $exist_count = 0;
+
+        foreach($student_array as $k => $v):
+
+           
+                $sn_from_student_list = $v['student_number'];
+                $sn_from_newly_imported_csv = $new_student_array['student_number'];
+                
+
+                if($sn_from_student_list == $sn_from_newly_imported_csv){
+                    $exist_count += 1;
+                }
+           
+          
+
+        endforeach;
+
+        if($exist_count > 0):
+            $is_exist_bool = true;
+        endif;
+
+
+        return $is_exist_bool;
+
+    }
+
     public function upload_csv(Request $request){
       
 
+        $student_array = $this->getStudentDetails();
+
         $filename = $request->csv_filename;
 
+        $data_student_already_exist = array();
+
+      
         if($filename):
             $file_name = $request->csv_filename->getClientOriginalName();
             $request->csv_filename->move(public_path('csv'), $file_name);
@@ -109,6 +147,8 @@ class CoordinatorController extends Controller
             $data_from_csv = array();
 
             $student_update = Student::where('stat',7)->update(array('stat'=>0));
+
+            $exist_count_ndx = 0;
     
             while(($row = fgetcsv($csvfile, 1000,",")) !== FALSE){
     
@@ -128,28 +168,42 @@ class CoordinatorController extends Controller
                 $data_from_csv['address'] = $row[14];
                 $data_from_csv['contact'] = $row[15];              
 
-              
+                $is_exist = $this->isStudentExist($student_array,$data_from_csv);
 
-                $student_details = new Student;
-                $student_details->school_id = $data_from_csv['school_id'];
-                $student_details->student_token = $data_from_csv['student_token'];
-                $student_details->academic_year_id = $data_from_csv['academic_year_id']; 
-                $student_details->student_number = $data_from_csv['student_number'];
-                $student_details->last_name = $data_from_csv['last_name']; 
-                $student_details->first_name = $data_from_csv['first_name']; 
-                $student_details->middle_name = $data_from_csv['middle_name']; 
-                $student_details->program = $data_from_csv['program']; 
-                $student_details->year = $data_from_csv['year']; 
-                $student_details->section = $data_from_csv['section']; 
-                $student_details->parent_first_name = $data_from_csv['parent_first_name'];
-                $student_details->parent_last_name = $data_from_csv['parent_last_name'];
-                $student_details->parent_middle_name = $data_from_csv['parent_middle name'];
-                $student_details->address = $data_from_csv['address'];
-                $student_details->contact = $data_from_csv['contact'];
-                $student_details->status = 'Unregistered';
-                $student_details->stat = 7;
-             
-                $student_details->save();
+                if($is_exist == false):
+
+                    $student_details = new Student;
+                    $student_details->school_id = $data_from_csv['school_id'];
+                    $student_details->student_token = $data_from_csv['student_token'];
+                    $student_details->academic_year_id = $data_from_csv['academic_year_id']; 
+                    $student_details->student_number = $data_from_csv['student_number'];
+                    $student_details->last_name = $data_from_csv['last_name']; 
+                    $student_details->first_name = $data_from_csv['first_name']; 
+                    $student_details->middle_name = $data_from_csv['middle_name']; 
+                    $student_details->program = $data_from_csv['program']; 
+                    $student_details->year = $data_from_csv['year']; 
+                    $student_details->section = $data_from_csv['section']; 
+                    $student_details->parent_first_name = $data_from_csv['parent_first_name'];
+                    $student_details->parent_last_name = $data_from_csv['parent_last_name'];
+                    $student_details->parent_middle_name = $data_from_csv['parent_middle name'];
+                    $student_details->address = $data_from_csv['address'];
+                    $student_details->contact = $data_from_csv['contact'];
+                    $student_details->status = 'Unregistered';
+                    $student_details->stat = 7;
+                
+                    $student_details->save();
+
+                else:
+
+                    //echo 'Student Already Exist '.$data_from_csv['first_name']." ".$data_from_csv['last_name']." (SN:".$data_from_csv['student_number'].")"; 
+
+                    $data_student_already_exist[$exist_count_ndx]['student_number'] = $data_from_csv['student_number'];
+                    $data_student_already_exist[$exist_count_ndx]['first_name'] = $data_from_csv['first_name'];
+                    $data_student_already_exist[$exist_count_ndx]['last_name'] = $data_from_csv['last_name'];
+                     
+                    $exist_count_ndx += 1;
+
+                endif;
 
            
             }
@@ -162,7 +216,7 @@ class CoordinatorController extends Controller
         endif;
 
         $students = Student::orderBy('last_name','asc')->get();
-        return view('coor.list')->with('students',$students);
+        return view('coor.list')->with('students',$students)->with('students_already_exist',$data_student_already_exist);
     }
 
     public function import_csv(Request $request){
