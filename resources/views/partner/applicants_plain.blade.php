@@ -3,52 +3,14 @@
 Applicant List ({{$job->title}})
 @endsection
 @section('content')
-    @php
-    require app_path('PHPW2V/src/Word2Vec.php');
-    require app_path('PHPW2V/src/SoftmaxApproximators/NegativeSampling.php');
-
-    use PHPW2V\Word2Vec;
-    use PHPW2V\SoftmaxApproximators\NegativeSampling;
-
-    $job_skills_w2v = array();
-    @endphp
-
-    @foreach ($job->job_skills as $skill)
-    @php
-    $job_skills_w2v[] = strtolower($skill->skill);
-    @endphp
-    @endforeach
-
-    @php
-    $remove = array('without', 'of', 'or', 'in', 'like ', 'and', 'a', 'an', 'the', 'is', 'in', 'at', 'to', 'from', 'by', 'on', 'with', 'for', 'about', 'as', 'like', 'this', 'that', 'these', 'and', 'a', 'an', 'the', 'is', 'in', 'at', 'to', 'from', 'by', 'on', 'with', 'for', 'about', 'as', 'we', 'our', 'us', 'they', 'and', 'a', 'an', 'the', "is", "it's", 'its', 'he\'s', 'she\'s', 'they\'re', 'we\'ve', 'i\'m', 'you\'re', 'one', 'in', 'for', 'on', 'with', 'about', 'above', "is", "am", 'are', 'was', 'were', "have", "had", 'without', 'and', 'but', 'or', 'nor', 'for', 'yet', 'so', 'because', 'although', 'while', 'since', 'unless', 'until', 'whether', 'since', 'after', 'before', 'once', 'whenever', 'wherever', 'am', 'is', 'are', 'was', 'were', 'be', 'being', 'been', 'become', 'seem', 'look', 'feel', 'sound', 'taste', 'smell', 'appear', 'remain', 'grow', 'stay', 'turn');
-
-    $dimensions     = 100; //vector dimension size
-    $sampling       = new NegativeSampling; //Softmax Approximator
-    $minWordCount   = 1; //minimum word count
-    $alpha          = .01; //the learning rate
-    $window         = 3; //window for skip-gram
-    $epochs         = 500; //how many epochs to run
-    $subsample      = 0.05; //the subsampling rate
-
-    $word2vec = new Word2Vec($dimensions, $sampling, $window, $subsample,  $alpha, $epochs, $minWordCount);
-    $word2vec->train($job_skills_w2v);
-    $word2vec->save('my_word2vec_model');
-    $word2vec = new Word2Vec();
-    $word2vec = $word2vec->load('my_word2vec_model');
-    @endphp
-
-    {{-- Job indicators --}}
-    @php
-        $job_skill = count($job->job_skills);
-        $job_skill_indicator = 100/$job_skill;
-    @endphp
+  
 
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
                     <th width='25%'>Full Name</th>
-                    <th>Total Ratings</th>
+                    <th>Job Match Percentage</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -65,59 +27,53 @@ Applicant List ({{$job->title}})
                         <td>{{$applicant->student->last_name}}, {{$applicant->student->first_name}}</td>
                         <td>
                             @php
+
                                 $totalScore = 0;
                                 $maxPossibleScore = 0;
                                 $job_skill_indicator = 10;
+                                $percentage = 0;
+
+                                $skill_array = array();
+                                $ndx = 0;
+
+                                $skillset_string = "";
+
+                                $job_desc = $job->job_descriptions;
+
                             @endphp
+
                             @foreach ($applicant->student->skill_tbl as $skill)
+
                                 @php
-                                    try {
-                                        $skill_to_match = explode(" ", strtolower($skill->skill));
-                                        $mostSimilar = $word2vec->mostSimilar($skill_to_match);
-                                        $skillScore = 0;
-                                        $cosineDistance = [];
-                                        $cosineSimilarity = [];
+                                   
+                                    $skill_item_value = $skill['skill'];                                
+                                   
+                                    $skillset_string .= " ".$skill_item_value;
+                                  
 
-                                        foreach ($mostSimilar as $key => $value) {
-                                            if (!in_array($key, $remove)) {
-                                                $cosine_similarity = $value;
-                                                $cosineSimilarity[] = $cosine_similarity;
-                                                $cosineDistance[] = 1 - $cosine_similarity;
-
-                                                if ($cosine_similarity > 0.5) {
-                                                    $skillScore += $cosine_similarity * $job_skill_indicator;
-                                                }
-                                            }
-                                        }
-
-                                        // Cap the skillScore to a maximum value
-                                        $skillScore = min($skillScore, $job_skill_indicator);
-
-                                        // Add skillScore to totalScore
-                                        $totalScore += $skillScore;
-
-                                        // Increase maxPossibleScore by job_skill_indicator for each skill
-                                        $maxPossibleScore += $job_skill_indicator;
-
-                                        // Output JavaScript data attributes
-                                        echo "<div class='skill-data' data-skill='" . strtolower($skill->skill) . "' data-score='" . $skillScore . "'></div>";
-
-                                        // Output JavaScript code to display cosine similarity and distance
-                                        echo "<script>";
-                                        echo "console.log('Cosine Similarity for " . $skill->skill . ":', " . json_encode($cosineSimilarity) . ");";
-                                        echo "console.log('Cosine Distance for " . $skill->skill . ":', " . json_encode($cosineDistance) . ");";
-                                        echo "</script>";
-
-                                    } catch (\Throwable $th) {
-                                        // Handle error
-                                    }
                                 @endphp
+                                
                             @endforeach
 
                             @php
-                                $percentage = $maxPossibleScore > 0 ? ($totalScore / $maxPossibleScore) * 100 : 0;
+
+                                $python_file = asset('python_files/identify_similarity.py');
+                                $python_file_directory = getcwd()."\python_files\identify_similarity.py";
+                                $python_file_sample_directory = getcwd()."\python_files\index.py";
+                                $model_directory = getcwd()."\python_files\job_skills_word2vec.model";
+
+                           
+                                //$output = $python_file;
+                                //$output = system("python ".$python_file_directory." 'mechanical engineer' 'mechanical engineer flowsimulation' 'hands-on experience' 'expert'");
+                                //$output = system("python http://127.0.0.1:8000/python_files/index.py");
+                                $output = system("python ".$python_file_directory." ".$model_directory." ".$job_desc." 'expert' ".$skillset_string." 'expert'");
+                                
+
+                                //echo $skillset_string;
+                             
                             @endphp
-                            {{ $percentage > 100 ? "100%" : number_format($percentage, 2, '.', '') . "%" }}
+
+                            
                         </td>
 
                         <td>{{$applicant->status}}</td>

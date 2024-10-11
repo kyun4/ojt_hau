@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2024 at 04:31 PM
+-- Generation Time: Oct 11, 2024 at 10:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -150,7 +150,6 @@ INSERT INTO `job_skills` (`id`, `job_id`, `skill`, `created_at`, `updated_at`) V
 (8, 1, 'Can integrate ideas smooth in the team and can work, clarify and collaborate with the requirements of team', '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
 (9, 1, 'Can translate client\'s demand into something more creative and within the scope', '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
 (10, 1, 'Skills with Flutterflow, Adobe XD and Photoshop is not required but is a plus', '2024-09-21 11:00:58', '2024-09-21 11:00:58'),
-(11, 2, 'Adaptable, Team Player and Can do right with minimal supervision', '2024-10-03 14:40:00', '2024-10-03 14:40:00'),
 (12, 2, 'knowledge in React Native', '2024-10-03 14:40:00', '2024-10-03 14:40:00'),
 (13, 2, 'knowledge in UI and UX', '2024-10-03 14:40:00', '2024-10-03 14:40:00');
 
@@ -404,8 +403,15 @@ INSERT INTO `students` (`id`, `school_id`, `student_token`, `academic_year_id`, 
 (4, 1, '', 1, '40000000', NULL, 'BAUTISTA', 'ANA', 'D', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'name', 'Parent', 'guardian', '191 kakawati, san fernando, pampanga', '9919090111', 'Active', '0', '2024-05-24 15:04:32', '2024-09-23 12:40:48'),
 (5, 1, '', 1, '50000000', NULL, 'OCAMPO', 'ANDRES', 'E', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', NULL, NULL, NULL, NULL, NULL, 'Active', '0', '2024-05-24 15:04:32', '2024-09-21 13:05:03'),
 (6, 1, '1999999', 1, '10000002', NULL, 'Salas', 'Ben', 'Rafael', '1', '4', 'WD-32', 'salas', 'Rafael', 'salas', '111 don bosco, paranaque, ncr', '991909111', 'Active', '0', '2024-09-24 13:37:02', '2024-10-03 14:37:24'),
-(56, 1, '728932178', 1, '2400902801', NULL, 'lastnamesample', 'firstname', 'middle', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:38:45', '2024-10-04 05:38:45'),
-(57, 1, '100004111', 1, '2422050002', NULL, 'secondlastnamesample', 'firstnamesample', 'namesample', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-04 05:38:45', '2024-10-04 05:38:45');
+(56, 1, '728932178', 1, '2400902801', NULL, 'lastnamesample', 'firstname', 'middle', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '0', '2024-10-04 05:38:45', '2024-10-05 11:02:15'),
+(57, 1, '100004111', 1, '2422050002', NULL, 'secondlastnamesample', 'firstnamesample', 'namesample', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '0', '2024-10-04 05:38:45', '2024-10-05 11:02:15'),
+(58, 1, '', 1, '240000001', NULL, 'apurado', 'harold', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'apurado', 'harold', 'mateo', '111 pinagsama, taguig city, ncr', NULL, 'Active', '0', '2024-10-05 11:02:15', '2024-10-05 15:17:44'),
+(59, 1, '', 1, '240000002', NULL, 'mission', 'aries', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', 'johnny', 'aries', 'mission', '99 katapat ni neko street pinagsama, Taguig City, ncr', NULL, 'Active', '7', '2024-10-05 15:17:45', '2024-10-05 15:21:03'),
+(60, 1, '10000501', 1, '240000003', NULL, 'neko', 'moon', 'cake', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-05 15:17:45', '2024-10-05 15:17:45'),
+(61, 1, '100002201', 1, '240000004', NULL, 'aguinaldo', 'paeng', 'rafael', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-05 15:17:45', '2024-10-05 15:17:45'),
+(62, 1, '100005501', 1, '240000005', NULL, 'dennis', 'nicanor', 'trillo', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-05 15:17:45', '2024-10-05 15:17:45'),
+(63, 1, '100002201', 1, '240000006', NULL, 'session', 'johnny', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-05 15:17:45', '2024-10-05 15:17:45'),
+(64, 1, '100011001', 1, '240000007', NULL, 'dy', 'jordan', 'matthew', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', '4', 'WD-402', '', '', '', '', '', 'Unregistered', '7', '2024-10-05 15:17:45', '2024-10-05 15:17:45');
 
 -- --------------------------------------------------------
 
@@ -459,7 +465,9 @@ CREATE TABLE `student_applications` (
 INSERT INTO `student_applications` (`id`, `student_id`, `job_id`, `status`, `stat`, `created_at`, `updated_at`) VALUES
 (1, 4, 1, 'Approved', 0, '2024-09-23 12:41:33', '2024-10-04 09:02:53'),
 (2, 3, 1, 'Approved', 0, '2024-09-23 15:38:08', '2024-09-23 15:42:25'),
-(3, 6, 2, 'Approved', 0, '2024-10-03 14:40:46', '2024-10-03 16:03:54');
+(3, 6, 2, 'Approved', 0, '2024-10-03 14:40:46', '2024-10-03 16:03:54'),
+(4, 58, 1, 'Recruited', 0, '2024-10-05 11:03:52', '2024-10-05 11:04:47'),
+(5, 59, 2, 'Applied', 0, '2024-10-05 15:21:34', '2024-10-05 15:21:34');
 
 -- --------------------------------------------------------
 
@@ -484,7 +492,9 @@ CREATE TABLE `student_employments` (
 --
 
 INSERT INTO `student_employments` (`id`, `student_id`, `work_exp_company`, `work_exp_address`, `work_exp_position`, `work_exp_s_year`, `work_exp_e_year`, `created_at`, `updated_at`) VALUES
-(1, 6, 'Jollibee', 'Tuktukan, Taguig City', 'Fast Food Director', '2022-01-03', '2024-09-30', '2024-10-03 14:36:09', '2024-10-03 14:36:09');
+(1, 6, 'Jollibee', 'Tuktukan, Taguig City', 'Fast Food Director', '2022-01-03', '2024-09-30', '2024-10-03 14:36:09', '2024-10-03 14:36:09'),
+(2, 58, 'Accenture', 'Taguig', 'Junior Developer', '2024-01-01', '2024-10-01', '2024-10-05 11:03:26', '2024-10-05 11:03:26'),
+(3, 59, 'Philpost PH', 'Makati City', 'Post Master', '2018-02-05', '2024-10-01', '2024-10-05 15:19:46', '2024-10-05 15:19:46');
 
 -- --------------------------------------------------------
 
@@ -660,7 +670,8 @@ INSERT INTO `student_skills` (`id`, `student_id`, `skill`, `created_at`, `update
 (5, 6, 'UI and UX Design', '2024-10-03 14:36:49', '2024-10-03 14:36:49'),
 (6, 6, 'Bakery', '2024-10-03 14:36:49', '2024-10-03 14:36:49'),
 (7, 6, 'Cybersecurity', '2024-10-03 14:36:49', '2024-10-03 14:36:49'),
-(8, 6, 'VB dot Net', '2024-10-03 14:36:49', '2024-10-03 14:36:49');
+(8, 6, 'VB dot Net', '2024-10-03 14:36:49', '2024-10-03 14:36:49'),
+(12, 59, 'engineer', '2024-10-05 15:20:27', '2024-10-11 08:27:42');
 
 -- --------------------------------------------------------
 
@@ -693,7 +704,9 @@ INSERT INTO `users` (`id`, `role_id`, `profile_id`, `student_id`, `email`, `user
 (4, 1, 0, 4, 'student_hau@email.com', 'student_hau', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-05-24 15:06:12', '2024-05-24 15:06:12'),
 (5, 1, 0, 5, 'andresusername@gmail.co', 'andres_username', '1bbd886460827015e5d605ed44252251', 'Active', '0', '2024-09-21 13:05:03', '2024-09-21 13:05:03'),
 (6, 1, 0, 3, 'juanreyes@gmail.com', 'juanreyes24', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-09-23 15:24:35', '2024-09-23 15:25:29'),
-(7, 1, 0, 6, 'bensalas@gmail.com', 'bensalas@gmail.com', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-09-25 02:25:25', '2024-09-25 02:25:25');
+(7, 1, 0, 6, 'bensalas@gmail.com', 'bensalas@gmail.com', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-09-25 02:25:25', '2024-09-25 02:25:25'),
+(8, 1, 0, 58, 'haroldswiper@gmail.com', 'usernameharold', '1bbd886460827015e5d605ed44252251', 'Active', '0', '2024-10-05 11:02:55', '2024-10-05 11:02:55'),
+(9, 1, 0, 59, 'ariesidekicknineko@gmail.com', 'aries', '58bad6b697dff48f4927941962f23e90', 'Active', '0', '2024-10-05 15:19:09', '2024-10-05 15:19:09');
 
 --
 -- Indexes for dumped tables
@@ -935,7 +948,7 @@ ALTER TABLE `specializations`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `student_accomplishments`
@@ -947,13 +960,13 @@ ALTER TABLE `student_accomplishments`
 -- AUTO_INCREMENT for table `student_applications`
 --
 ALTER TABLE `student_applications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `student_employments`
 --
 ALTER TABLE `student_employments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student_evaluations`
@@ -989,13 +1002,13 @@ ALTER TABLE `student_requirements`
 -- AUTO_INCREMENT for table `student_skills`
 --
 ALTER TABLE `student_skills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
