@@ -4,12 +4,31 @@ Applicant List ({{$job->title}})
 @endsection
 @section('content')
   
+@php
+    $jobskill_required = "";
+@endphp
+
+
 
     <div class="table-responsive">
+
+        <h6 class = "alert alert-secondary">
+            <b>Required Skills</b><br/>
+            @foreach ($jobskill as $job_skill)
+                @php
+                    $jobskill_required .= $job_skill->skill."\n";
+                @endphp
+            
+                    {{ strtoupper($job_skill->skill) }}<br/>    
+            
+            @endforeach
+        </h6>
+
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
                     <th width='25%'>Full Name</th>
+                    <th width='10%'>Skills</th>
                     <th>Job Match Percentage</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -25,7 +44,7 @@ Applicant List ({{$job->title}})
                 @else
                     <tr>
                         <td>{{$applicant->student->last_name}}, {{$applicant->student->first_name}}</td>
-                        <td>
+
                             @php
 
                                 $totalScore = 0;
@@ -36,24 +55,31 @@ Applicant List ({{$job->title}})
                                 $skill_array = array();
                                 $ndx = 0;
 
-                                $skillset_string = "";
+                                $skillset_string = "";                            
 
                                 $job_desc = $job->job_descriptions;
+                            
 
                             @endphp
+
+                     
 
                             @foreach ($applicant->student->skill_tbl as $skill)
 
                                 @php
-                                   
+                                
                                     $skill_item_value = $skill['skill'];                                
-                                   
-                                    $skillset_string .= " ".$skill_item_value;
-                                  
+                                
+                                    $skillset_string .= " ".$skill_item_value;                            
 
                                 @endphp
-                                
+
                             @endforeach
+
+
+                        <td>{{ $skillset_string }}</td>
+                        <td>
+                          
 
                             @php
 
@@ -66,10 +92,10 @@ Applicant List ({{$job->title}})
                                 //$output = $python_file;
                                 //$output = system("python ".$python_file_directory." 'mechanical engineer' 'mechanical engineer flowsimulation' 'hands-on experience' 'expert'");
                                 //$output = system("python http://127.0.0.1:8000/python_files/index.py");
-                                $output = system("python ".$python_file_directory." ".$model_directory." ".$job_desc." 'expert' ".$skillset_string." 'expert'");
+                                $output = system("python ".$python_file_directory." ".$model_directory." '".trim($jobskill_required)."' 'expert' '".$skillset_string."' 'expert'");
                                 
 
-                                //echo $skillset_string;
+                               
                              
                             @endphp
 

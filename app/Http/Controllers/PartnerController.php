@@ -85,11 +85,16 @@ class PartnerController extends Controller
     public function applicants($id){
         $applicants  = StudentApplication::where('job_id',base64_decode($id))->get();
         $job  = Job::find(base64_decode($id));
+        $job_skill = JobSkill::where('job_id',base64_decode($id))->get();
+
         return view('partner.applicants_plain')
-             ->with('applicants',$applicants )
-             ->with('job',$job );
+             ->with('applicants',$applicants)
+             ->with('job',$job)
+             ->with('jobskill',$job_skill);
         
     }
+
+   
     public function applicant_profile($id,$job_id){
         $applicant  = Student::find(base64_decode($id));
         return view('partner.profile')

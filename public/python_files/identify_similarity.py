@@ -1,6 +1,7 @@
 import sys
 from gensim.models import Word2Vec
 
+import math
 
 
 
@@ -17,7 +18,7 @@ skill_similarity = model.wv.n_similarity(job_desc, applicant_skills)
 skill_similarity_percentage = skill_similarity * 100
 
 print('Skill Similarity: ')
-print(skill_similarity_percentage)
+print("{:.2f}".format(skill_similarity_percentage))
 print("%")
 print("<br/>")
 
@@ -63,7 +64,9 @@ print("<br/>")
 print("<br/>")
 print('Skill and Proficiency Percentage')
 print("<br/>")
-print(final_similarity_percentage)
+print(round(final_similarity_percentage,2))
 print("%")
+
+
 
 
