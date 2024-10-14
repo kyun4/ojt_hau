@@ -125,6 +125,45 @@ class CoordinatorController extends Controller
 
     }
 
+    public function generate_student_token($current_students_size, $firstname,$lastname){
+
+        $start = "";
+        $end = "";
+
+        if($firstname != "" || $lastname != ""){
+            $start = substr($firstname,0,1);
+            $end = substr($lastname,0,1);
+        }
+     
+        $mid = $current_students_size;
+        $mid = $this->fill_with_zero(10,$mid);
+
+        $final_token_value = strtoupper($start)."".$mid."".strtoupper($end);
+
+        return $final_token_value;
+    }
+
+    public function fill_with_zero($max_zero_limit,$value){
+
+        $max_zero_limit_final = $max_zero_limit - strlen($value);
+
+        $str_final = "";
+
+
+        if($max_zero_limit_final > 0){
+            for($i = 0;$i<$max_zero_limit_final;$i++){
+                $str_final .= "0";
+            }
+        }
+       
+
+        $str_final .= $value;
+
+        return $str_final;
+    }
+
+    
+
     public function upload_csv(Request $request){
       
 
@@ -149,6 +188,7 @@ class CoordinatorController extends Controller
             $student_update = Student::where('stat',7)->update(array('stat'=>0));
 
             $exist_count_ndx = 0;
+            $adding_counter = 0;
     
             while(($row = fgetcsv($csvfile, 1000,",")) !== FALSE){
     
@@ -174,12 +214,13 @@ class CoordinatorController extends Controller
 
                     $student_details = new Student;
                     $student_details->school_id = $data_from_csv['school_id'];
-                    $student_details->student_token = $data_from_csv['student_token'];
+                 
                     $student_details->academic_year_id = $data_from_csv['academic_year_id']; 
                     $student_details->student_number = $data_from_csv['student_number'];
                     $student_details->last_name = $data_from_csv['last_name']; 
                     $student_details->first_name = $data_from_csv['first_name']; 
                     $student_details->middle_name = $data_from_csv['middle_name']; 
+                    $student_details->student_token =  $this->generate_student_token(sizeof($student_array)+$adding_counter, $data_from_csv['first_name'],$data_from_csv['last_name']);
                     $student_details->program = $data_from_csv['program']; 
                     $student_details->year = $data_from_csv['year']; 
                     $student_details->section = $data_from_csv['section']; 
@@ -192,6 +233,8 @@ class CoordinatorController extends Controller
                     $student_details->stat = 7;
                 
                     $student_details->save();
+
+                    $adding_counter+=1;
 
                 else:
 
