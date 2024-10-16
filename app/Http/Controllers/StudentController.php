@@ -364,11 +364,19 @@ class StudentController extends Controller
        // return Auth::user()->profile;
        // return dd($request);
        // $skills = StudentSkill::where('student_id',Auth::user()->profile->id)->delete();
+
+       
+       $expertise_array = $request->level_of_expertise;
+
+       $counter = 0;
+
        foreach ($request->skills as $skill) {
            $skills = new StudentSkill;
-           $skills->student_id = Auth::user()->student->id ;
-           $skills->skill = $skill ;
+           $skills->student_id = Auth::user()->student->id;
+           $skills->skill = $skill;
+           $skills->level_of_expertise = $expertise_array[$counter];
            $skills->save();
+           $counter+=1;
        }
        return redirect('/student/profile')->with('success','Skills Update Successfully');
    }
