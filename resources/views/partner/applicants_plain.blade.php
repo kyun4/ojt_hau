@@ -92,10 +92,17 @@ Applicant List ({{$job->title}})
                                 //$output = $python_file;
                                 //$output = system("python ".$python_file_directory." 'mechanical engineer' 'mechanical engineer flowsimulation' 'hands-on experience' 'expert'");
                                 //$output = system("python http://127.0.0.1:8000/python_files/index.py");
-                                $output = system("python ".$python_file_directory." ".$model_directory." '".trim($jobskill_required)."' 'expert' '".$skillset_string."' 'expert'");
+                                //$output = system("python ".$python_file_directory." ".$model_directory." '".trim($jobskill_required)."' 'expert' '".$skillset_string."' 'expert'");
                                 
+                                $skillset_string = str_replace(" ","_",$skillset_string);
+                                $skillset_string = str_replace("\n","_",$skillset_string);
 
-                               
+                                $jobskill_required = str_replace(" ","_",$jobskill_required);
+                                $jobskill_required = str_replace("\n","_",$jobskill_required);
+
+                                $command = "python ".$python_file_directory." ".$model_directory."~".trim($jobskill_required)."~expert~".trim($skillset_string)."~expert";
+                                $output = system($command);                                
+
                              
                             @endphp
 

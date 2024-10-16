@@ -1,20 +1,23 @@
 import sys
 from gensim.models import Word2Vec
 
-import math
 
+base_string = sys.argv[1].split('~')
 
+model_path = base_string[0]
 
-model_path = sys.argv[1].split()[0]
+required_skills = base_string[1]
+required_proficiency = base_string[2]
+applicant_skills = base_string[3]
+applicant_proficiency = base_string[4]
 
-job_desc = sys.argv[2].split()[0].strip("'")
-required_proficiency = sys.argv[3].split()[0].strip("'")
-applicant_skills = sys.argv[4].split()[0].strip("'")
-applicant_proficiency = sys.argv[5].split()[0].strip("'")
 
 model = Word2Vec.load(model_path)
 
-skill_similarity = model.wv.n_similarity(job_desc, applicant_skills)
+required_skills_trim = required_skills.replace("_"," ")
+applicant_skills_trim = applicant_skills.replace("_"," ")
+
+skill_similarity = model.wv.n_similarity(required_skills_trim, applicant_skills_trim)
 skill_similarity_percentage = skill_similarity * 100
 
 print('Skill Similarity: ')
@@ -23,9 +26,9 @@ print("%")
 print("<br/>")
 
 proficiency_keywords = {
-    'familiar': ['familiar with', 'basic understanding', 'knowledge of', 'is a plus'],
-    'working': ['working knowledge', 'hands-on experience', 'practical understanding'],
-    'expert': ['expert in', 'solid experience', 'extensive knowledge', 'highly proficient']
+    'familiar': ['familiar with', 'famililar', 'basic understanding', 'knowledge of', 'is a plus'],
+    'working': ['working knowledge','working experience','hands-on experience', 'practical understanding'],
+    'expert': ['expert in','expert','solid experience', 'extensive knowledge', 'highly proficient']
 }
 
 def detect_proficiency_level(text):
@@ -66,7 +69,5 @@ print('Skill and Proficiency Percentage')
 print("<br/>")
 print(round(final_similarity_percentage,2))
 print("%")
-
-
 
 
