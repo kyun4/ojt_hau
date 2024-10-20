@@ -60,14 +60,14 @@ proficiency_weight_job = proficiency_weights[job_proficiency_index]
 final_similarity = skill_similarity * (proficiency_weight_applicant + proficiency_weight_job) / 2
 final_similarity_percentage = final_similarity * 100
 
-print(f'Applicant Proficiency Index: {proficiency_weight_applicant}')
-print("<br/>")
-print(f'Job Proficiency Index: {proficiency_weight_job}')
-print("<br/>")
-print("<br/>")
-print('Skill and Proficiency Percentage')
-print("<br/>")
-print(round(final_similarity_percentage,2))
-print("%")
+# print(f'Applicant Proficiency Index: {proficiency_weight_applicant}')
+# print("<br/>")
+# print(f'Job Proficiency Index: {proficiency_weight_job}')
+# print("<br/>")
+# print("<br/>")
+# print('Skill and Proficiency Percentage')
+# print("<br/>")
+# print(round(final_similarity_percentage,2))
+# print("%")
 
 

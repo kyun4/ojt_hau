@@ -82,7 +82,8 @@ Job Details: ({{$job->title}})
             @if ($checker==1)
                 <button class="btn btn-sm btn-primary" disabled>Applied</button>
             @else
-                <button class="btn btn-sm btn-primary" onclick="apply_job('{{base64_encode($job->job_id)}}')">Apply</button>
+                <button class="btn btn-sm btn-primary" onclick="apply_job('{{$job_id}}')">Apply</button>
+               
             @endif
 
         </div>
@@ -94,6 +95,7 @@ Job Details: ({{$job->title}})
             var c = confirm('Are your sure to apply on this job?');
             if(c == true){
                 window.open('/student/apply/job/'+id,'_parent');
+               
             }
         }
         function details_job(id){

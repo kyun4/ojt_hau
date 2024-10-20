@@ -374,9 +374,9 @@ class StudentController extends Controller
            $skills = new StudentSkill;
            $skills->student_id = Auth::user()->student->id;
            $skills->skill = $skill;
-           $skills->level_of_expertise = $expertise_array[$counter];
+           //$skills->level_of_expertise = $expertise_array[$counter];
            $skills->save();
-           $counter+=1;
+           //$counter+=1;
        }
        return redirect('/student/profile')->with('success','Skills Update Successfully');
    }
@@ -419,7 +419,7 @@ class StudentController extends Controller
         $applications = StudentApplication::where('student_id',Auth::user()->student->id)->pluck('job_id');
        //  return $applications;
         $job = Job::find(base64_decode($id));
-        return view('students.job_details')->with('job',$job)->with('applications',$applications);
+        return view('students.job_details')->with('job',$job)->with('applications',$applications)->with('job_id',$id);
     }
     public function for_approval($id){
        $applications = StudentApplication::find(base64_decode($id));

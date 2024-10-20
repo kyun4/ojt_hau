@@ -104,6 +104,7 @@ search job
             var c = confirm('Are your sure to apply on this job?');
             if(c == true){
                 window.open('/student/apply/job/'+id,'_parent');
+               
             }
         }
         function cancel_application(stud_id, job_id) {
